@@ -8,22 +8,26 @@
                 {
                     "city": "Vancouver",
                     "cost": 1,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Calgary",
                     "cost": 4,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Helena",
                     "cost": 6,
-                    "color": "yellow"
+                    "color": "yellow",
+                    "count": 1
                 },
                 {
                     "city": "Portland",
                     "cost": 1,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 }
             ]
         },
@@ -35,12 +39,14 @@
                 {
                     "city": "Seattle",
                     "cost": 1,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Calgary",
                     "cost": 3,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 }
             ]
         },
@@ -52,22 +58,26 @@
                 {
                     "city": "Vancouver",
                     "cost": 3,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Seattle",
                     "cost": 4,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Helena",
                     "cost": 4,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Winnipeg",
                     "cost": 6,
-                    "color": "white"
+                    "color": "white",
+                    "count": 1
                 }
             ]
         },
@@ -79,22 +89,26 @@
                 {
                     "city": "Seattle",
                     "cost": 1,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Salt Lake City",
                     "cost": 6,
-                    "color": "blue"
+                    "color": "blue",
+                    "count": 1
                 },
                 {
                     "city": "San Francisco",
                     "cost": 5,
-                    "color": "green"
+                    "color": "green",
+                    "count": 2
                 },
                 {
                     "city": "San Francisco",
                     "cost": 5,
-                    "color": "pink"
+                    "color": "pink",
+                    "count": 2
                 }
             ]
         },
@@ -106,27 +120,32 @@
                 {
                     "city": "Portland",
                     "cost": 5,
-                    "color": "green"
+                    "color": "green",
+                    "count": 2
                 },
                 {
                     "city": "Portland",
                     "cost": 5,
-                    "color": "pink"
+                    "color": "pink",
+                    "count": 2
                 },
                 {
                     "city": "Salt Lake City",
                     "cost": 5,
-                    "color": "orange"
+                    "color": "orange",
+                    "count": 2
                 },
                 {
                     "city": "Los Angeles",
                     "cost": 3,
-                    "color": "yellow"
+                    "color": "yellow",
+                    "count": 2
                 },
                 {
                     "city": "Los Angeles",
                     "cost": 3,
-                    "color": "pink"
+                    "color": "pink",
+                    "count": 2
                 }
             ]
         },
@@ -138,22 +157,26 @@
                 {
                     "city": "San Francisco",
                     "cost": 3,
-                    "color": "yellow"
+                    "color": "yellow",
+                    "count": 2
                 },
                 {
                     "city": "San Francisco",
                     "cost": 3,
-                    "color": "pink"
+                    "color": "pink",
+                    "count": 2
                 },
                 {
                     "city": "Las Vegas",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Phoenix",
                     "cost": 3,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 }
             ]
         },
@@ -165,12 +188,14 @@
                 {
                     "city": "Los Angeles",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Salt Lake City",
                     "cost": 3,
-                    "color": "orange"
+                    "color": "orange",
+                    "count": 1
                 }
             ]
         },
@@ -182,32 +207,38 @@
                 {
                     "city": "Portland",
                     "cost": 6,
-                    "color": "blue"
+                    "color": "blue",
+                    "count": 1
                 },
                 {
                     "city": "San Francisco",
                     "cost": 5,
-                    "color": "orange"
+                    "color": "orange",
+                    "count": 2
                 },
                 {
                     "city": "Las Vegas",
                     "cost": 3,
-                    "color": "orange"
+                    "color": "orange",
+                    "count": 1
                 },
                 {
                     "city": "Helena",
                     "cost": 3,
-                    "color": "pink"
+                    "color": "pink",
+                    "count": 1
                 },
                 {
                     "city": "Denver",
                     "cost": 3,
-                    "color": "red"
+                    "color": "red",
+                    "count": 2
                 },
                 {
                     "city": "Denver",
                     "cost": 3,
-                    "color": "yellow"
+                    "color": "yellow",
+                    "count": 2
                 }
             ]
         },
@@ -219,22 +250,26 @@
                 {
                     "city": "Los Angeles",
                     "cost": 3,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Denver",
                     "cost": 5,
-                    "color": "white"
+                    "color": "white",
+                    "count": 1
                 },
                 {
                     "city": "Santa Fe",
                     "cost": 3,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "El Paso",
                     "cost": 3,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 }
             ]
         },
@@ -246,37 +281,44 @@
                 {
                     "city": "Seattle",
                     "cost": 6,
-                    "color": "yellow"
+                    "color": "yellow",
+                    "count": 1
                 },
                 {
                     "city": "Calgary",
                     "cost": 4,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Winnipeg",
                     "cost": 4,
-                    "color": "blue"
+                    "color": "blue",
+                    "count": 1
                 },
                 {
                     "city": "Duluth",
                     "cost": 6,
-                    "color": "orange"
+                    "color": "orange",
+                    "count": 1
                 },
                 {
                     "city": "Omaha",
                     "cost": 5,
-                    "color": "red"
+                    "color": "red",
+                    "count": 1
                 },
                 {
                     "city": "Denver",
                     "cost": 4,
-                    "color": "green"
+                    "color": "green",
+                    "count": 1
                 },
                 {
                     "city": "Salt Lake City",
                     "cost": 3,
-                    "color": "pink"
+                    "color": "pink",
+                    "count": 1
                 }
             ]
         },
@@ -288,22 +330,26 @@
                 {
                     "city": "Calgary",
                     "cost": 6,
-                    "color": "white"
+                    "color": "white",
+                    "count": 1
                 },
                 {
                     "city": "Helena",
                     "cost": 4,
-                    "color": "blue"
+                    "color": "blue",
+                    "count": 1
                 },
                 {
                     "city": "Duluth",
                     "cost": 4,
-                    "color": "black"
+                    "color": "black",
+                    "count": 1
                 },
                 {
                     "city": "Sault St. Marie",
                     "cost": 6,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 }
             ]
         },
@@ -315,47 +361,56 @@
                 {
                     "city": "Helena",
                     "cost": 4,
-                    "color": "green"
+                    "color": "green",
+                    "count": 1
                 },
                 {
                     "city": "Salt Lake City",
                     "cost": 3,
-                    "color": "red"
+                    "color": "red",
+                    "count": 2
                 },
                 {
                     "city": "Salt Lake City",
                     "cost": 3,
-                    "color": "yellow"
+                    "color": "yellow",
+                    "count": 2
                 },
                 {
                     "city": "Phoenix",
                     "cost": 5,
-                    "color": "white"
+                    "color": "white",
+                    "count": 1
                 },
                 {
                     "city": "Santa Fe",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Oklahoma City",
                     "cost": 4,
-                    "color": "red"
+                    "color": "red",
+                    "count": 1
                 },
                 {
                     "city": "Kansas City",
                     "cost": 4,
-                    "color": "black"
+                    "color": "black",
+                    "count": 1
                 },
                 {
                     "city": "Kansas City",
                     "cost": 4,
-                    "color": "orange"
+                    "color": "orange",
+                    "count": 1
                 },
                 {
                     "city": "Omaha",
                     "cost": 4,
-                    "color": "pink"
+                    "color": "pink",
+                    "count": 1
                 }
             ]
         },
@@ -367,22 +422,26 @@
                 {
                     "city": "Phoenix",
                     "cost": 3,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Denver",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Oklahoma City",
                     "cost": 3,
-                    "color": "blue"
+                    "color": "blue",
+                    "count": 1
                 },
                 {
                     "city": "El Paso",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 }
             ]
         },
@@ -394,27 +453,32 @@
                 {
                     "city": "Phoenix",
                     "cost": 3,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Santa Fe",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Oklahoma City",
                     "cost": 5,
-                    "color": "yellow"
+                    "color": "yellow",
+                    "count": 1
                 },
                 {
                     "city": "Dallas",
                     "cost": 4,
-                    "color": "red"
+                    "color": "red",
+                    "count": 1
                 },
                 {
                     "city": "Houston",
                     "cost": 6,
-                    "color": "green"
+                    "color": "green",
+                    "count": 1
                 }
             ]
         },
@@ -426,37 +490,44 @@
                 {
                     "city": "Helena",
                     "cost": 5,
-                    "color": "red"
+                    "color": "red",
+                    "count": 1
                 },
                 {
                     "city": "Duluth",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Duluth",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Chicago",
                     "cost": 4,
-                    "color": "blue"
+                    "color": "blue",
+                    "count": 1
                 },
                 {
                     "city": "Kansas City",
                     "cost": 1,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Kansas City",
                     "cost": 1,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Denver",
                     "cost": 4,
-                    "color": "pink"
+                    "color": "pink",
+                    "count": 1
                 }
             ]
         },
@@ -468,37 +539,44 @@
                 {
                     "city": "Winnipeg",
                     "cost": 4,
-                    "color": "black"
+                    "color": "black",
+                    "count": 1
                 },
                 {
                     "city": "Helena",
                     "cost": 6,
-                    "color": "orange"
+                    "color": "orange",
+                    "count": 1
                 },
                 {
                     "city": "Omaha",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Omaha",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Chicago",
                     "cost": 3,
-                    "color": "red"
+                    "color": "red",
+                    "count": 1
                 },
                 {
                     "city": "Toronto",
                     "cost": 6,
-                    "color": "pink"
+                    "color": "pink",
+                    "count": 1
                 },
                 {
                     "city": "Sault St. Marie",
                     "cost": 3,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 }
             ]
         },
@@ -510,22 +588,26 @@
                 {
                     "city": "Winnipeg",
                     "cost": 6,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Duluth",
                     "cost": 3,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Toronto",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Montreal",
                     "cost": 5,
-                    "color": "black"
+                    "color": "black",
+                    "count": 1
                 }
             ]
         },
@@ -537,42 +619,50 @@
                 {
                     "city": "Denver",
                     "cost": 4,
-                    "color": "black"
+                    "color": "black",
+                    "count": 2
                 },
                 {
                     "city": "Denver",
                     "cost": 4,
-                    "color": "orange"
+                    "color": "orange",
+                    "count": 2
                 },
                 {
                     "city": "Omaha",
                     "cost": 1,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Omaha",
                     "cost": 1,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Oklahoma City",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Oklahoma City",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Saint Louis",
                     "cost": 2,
-                    "color": "blue"
+                    "color": "blue",
+                    "count": 2
                 },
                 {
                     "city": "Saint Louis",
                     "cost": 2,
-                    "color": "pink"
+                    "color": "pink",
+                    "count": 2
                 }
             ]
         },
@@ -584,42 +674,50 @@
                 {
                     "city": "Santa Fe",
                     "cost": 3,
-                    "color": "blue"
+                    "color": "blue",
+                    "count": 1
                 },
                 {
                     "city": "El Paso",
                     "cost": 5,
-                    "color": "yellow"
+                    "color": "yellow",
+                    "count": 1
                 },
                 {
                     "city": "Denver",
                     "cost": 4,
-                    "color": "red"
+                    "color": "red",
+                    "count": 1
                 },
                 {
                     "city": "Kansas City",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Kansas City",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Dallas",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Dallas",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Little Rock",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 }
             ]
         },
@@ -631,32 +729,38 @@
                 {
                     "city": "El Paso",
                     "cost": 4,
-                    "color": "red"
+                    "color": "red",
+                    "count": 1
                 },
                 {
                     "city": "Oklahoma City",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Oklahoma City",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Little Rock",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Houston",
                     "cost": 1,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Houston",
                     "cost": 1,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 }
             ]
         },
@@ -668,22 +772,26 @@
                 {
                     "city": "El Paso",
                     "cost": 6,
-                    "color": "green"
+                    "color": "green",
+                    "count": 1
                 },
                 {
                     "city": "Dallas",
                     "cost": 1,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Dallas",
                     "cost": 1,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "New Orleans",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 }
             ]
         },
@@ -695,37 +803,44 @@
                 {
                     "city": "Omaha",
                     "cost": 4,
-                    "color": "blue"
+                    "color": "blue",
+                    "count": 1
                 },
                 {
                     "city": "Duluth",
                     "cost": 3,
-                    "color": "red"
+                    "color": "red",
+                    "count": 1
                 },
                 {
                     "city": "Toronto",
                     "cost": 4,
-                    "color": "white"
+                    "color": "white",
+                    "count": 1
                 },
                 {
                     "city": "Pittsburgh",
                     "cost": 3,
-                    "color": "orange"
+                    "color": "orange",
+                    "count": 1
                 },
                 {
                     "city": "Pittsburgh",
                     "cost": 3,
-                    "color": "black"
+                    "color": "black",
+                    "count": 1
                 },
                 {
                     "city": "Saint Louis",
                     "cost": 2,
-                    "color": "green"
+                    "color": "green",
+                    "count": 2
                 },
                 {
                     "city": "Saint Louis",
                     "cost": 2,
-                    "color": "white"
+                    "color": "white",
+                    "count": 2
                 }
             ]
         },
@@ -737,37 +852,44 @@
                 {
                     "city": "Kansas City",
                     "cost": 2,
-                    "color": "blue"
+                    "color": "blue",
+                    "count": 2
                 },
                 {
                     "city": "Kansas City",
                     "cost": 2,
-                    "color": "pink"
+                    "color": "pink",
+                    "count": 2
                 },
                 {
                     "city": "Chicago",
                     "cost": 2,
-                    "color": "green"
+                    "color": "green",
+                    "count": 2
                 },
                 {
                     "city": "Chicago",
                     "cost": 2,
-                    "color": "white"
+                    "color": "white",
+                    "count": 2
                 },
                 {
                     "city": "Pittsburgh",
                     "cost": 5,
-                    "color": "green"
+                    "color": "green",
+                    "count": 1
                 },
                 {
                     "city": "Nashville",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Little Rock",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 }
             ]
         },
@@ -779,27 +901,32 @@
                 {
                     "city": "Oklahoma City",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Dallas",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Saint Louis",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Nashville",
                     "cost": 3,
-                    "color": "white"
+                    "color": "white",
+                    "count": 1
                 },
                 {
                     "city": "New Orleans",
                     "cost": 3,
-                    "color": "green"
+                    "color": "green",
+                    "count": 1
                 }
             ]
         },
@@ -811,27 +938,32 @@
                 {
                     "city": "Houston",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Little Rock",
                     "cost": 3,
-                    "color": "green"
+                    "color": "green",
+                    "count": 1
                 },
                 {
                     "city": "Atlanta",
                     "cost": 4,
-                    "color": "yellow"
+                    "color": "yellow",
+                    "count": 2
                 },
                 {
                     "city": "Atlanta",
                     "cost": 4,
-                    "color": "orange"
+                    "color": "orange",
+                    "count": 2
                 },
                 {
                     "city": "Miami",
                     "cost": 6,
-                    "color": "red"
+                    "color": "red",
+                    "count": 1
                 }
             ]
         },
@@ -843,27 +975,32 @@
                 {
                     "city": "Duluth",
                     "cost": 6,
-                    "color": "pink"
+                    "color": "pink",
+                    "count": 1
                 },
                 {
                     "city": "Sault St. Marie",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Montreal",
                     "cost": 3,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Pittsburgh",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Chicago",
                     "cost": 4,
-                    "color": "white"
+                    "color": "white",
+                    "count": 1
                 }
             ]
         },
@@ -875,27 +1012,32 @@
                 {
                     "city": "Sault St. Marie",
                     "cost": 5,
-                    "color": "black"
+                    "color": "black",
+                    "count": 1
                 },
                 {
                     "city": "Toronto",
                     "cost": 3,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "New York",
                     "cost": 3,
-                    "color": "blue"
+                    "color": "blue",
+                    "count": 1
                 },
                 {
                     "city": "Boston",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Boston",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 }
             ]
         },
@@ -907,47 +1049,56 @@
                 {
                     "city": "Toronto",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Chicago",
                     "cost": 3,
-                    "color": "orange"
+                    "color": "orange",
+                    "count": 2
                 },
                 {
                     "city": "Chicago",
                     "cost": 3,
-                    "color": "black"
+                    "color": "black",
+                    "count": 2
                 },
                 {
                     "city": "Saint Louis",
                     "cost": 5,
-                    "color": "green"
+                    "color": "green",
+                    "count": 1
                 },
                 {
                     "city": "Nashville",
                     "cost": 4,
-                    "color": "yellow"
+                    "color": "yellow",
+                    "count": 1
                 },
                 {
                     "city": "Raleigh",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Washington",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "New York",
                     "cost": 2,
-                    "color": "white"
+                    "color": "white",
+                    "count": 2
                 },
                 {
                     "city": "New York",
                     "cost": 2,
-                    "color": "green"
+                    "color": "green",
+                    "count": 2
                 }
             ]
         },
@@ -959,27 +1110,32 @@
                 {
                     "city": "Saint Louis",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Little Rock",
                     "cost": 3,
-                    "color": "white"
+                    "color": "white",
+                    "count": 1
                 },
                 {
                     "city": "Pittsburgh",
                     "cost": 4,
-                    "color": "yellow"
+                    "color": "yellow",
+                    "count": 1
                 },
                 {
                     "city": "Raleigh",
                     "cost": 3,
-                    "color": "black"
+                    "color": "black",
+                    "count": 1
                 },
                 {
                     "city": "Atlanta",
                     "cost": 1,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 }
             ]
         },
@@ -991,37 +1147,44 @@
                 {
                     "city": "Nashville",
                     "cost": 1,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "New Orleans",
                     "cost": 4,
-                    "color": "yellow"
+                    "color": "yellow",
+                    "count": 2
                 },
                 {
                     "city": "New Orleans",
                     "cost": 4,
-                    "color": "orange"
+                    "color": "orange",
+                    "count": 2
                 },
                 {
                     "city": "Raleigh",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Raleigh",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Charleston",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Miami",
                     "cost": 5,
-                    "color": "blue"
+                    "color": "blue",
+                    "count": 1
                 }
             ]
         },
@@ -1033,37 +1196,44 @@
                 {
                     "city": "Pittsburgh",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Washington",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Washington",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Nashville",
                     "cost": 3,
-                    "color": "black"
+                    "color": "black",
+                    "count": 1
                 },
                 {
                     "city": "Atlanta",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Atlanta",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Charleston",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 }
             ]
         },
@@ -1075,27 +1245,32 @@
                 {
                     "city": "Pittsburgh",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "New York",
                     "cost": 2,
-                    "color": "orange"
+                    "color": "orange",
+                    "count": 2
                 },
                 {
                     "city": "New York",
                     "cost": 2,
-                    "color": "black"
+                    "color": "black",
+                    "count": 2
                 },
                 {
                     "city": "Raleigh",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Raleigh",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 }
             ]
         },
@@ -1107,37 +1282,44 @@
                 {
                     "city": "Montreal",
                     "cost": 3,
-                    "color": "blue"
+                    "color": "blue",
+                    "count": 1
                 },
                 {
                     "city": "Boston",
                     "cost": 2,
-                    "color": "yellow"
+                    "color": "yellow",
+                    "count": 2
                 },
                 {
                     "city": "Boston",
                     "cost": 2,
-                    "color": "red"
+                    "color": "red",
+                    "count": 2
                 },
                 {
                     "city": "Pittsburgh",
                     "cost": 2,
-                    "color": "white"
+                    "color": "white",
+                    "count": 2
                 },
                 {
                     "city": "Pittsburgh",
                     "cost": 2,
-                    "color": "green"
+                    "color": "green",
+                    "count": 2
                 },
                 {
                     "city": "Washington",
                     "cost": 2,
-                    "color": "orange"
+                    "color": "orange",
+                    "count": 2
                 },
                 {
                     "city": "Washington",
                     "cost": 2,
-                    "color": "black"
+                    "color": "black",
+                    "count": 2
                 }
             ]
         },
@@ -1149,22 +1331,26 @@
                 {
                     "city": "Montreal",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "Montreal",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 2
                 },
                 {
                     "city": "New York",
                     "cost": 2,
-                    "color": "yellow"
+                    "color": "yellow",
+                    "count": 2
                 },
                 {
                     "city": "New York",
                     "cost": 2,
-                    "color": "red"
+                    "color": "red",
+                    "count": 2
                 }
             ]
         },
@@ -1176,17 +1362,20 @@
                 {
                     "city": "Raleigh",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Atlanta",
                     "cost": 2,
-                    "color": "gray"
+                    "color": "gray",
+                    "count": 1
                 },
                 {
                     "city": "Miami",
                     "cost": 4,
-                    "color": "pink"
+                    "color": "pink",
+                    "count": 1
                 }
             ]
         },
@@ -1198,17 +1387,20 @@
                 {
                     "city": "New Orleans",
                     "cost": 6,
-                    "color": "red"
+                    "color": "red",
+                    "count": 1
                 },
                 {
                     "city": "Atlanta",
                     "cost": 5,
-                    "color": "blue"
+                    "color": "blue",
+                    "count": 1
                 },
                 {
                     "city": "Charleston",
                     "cost": 4,
-                    "color": "pink"
+                    "color": "pink",
+                    "count": 1
                 }
             ]
         }
