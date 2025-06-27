@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,17 +11,20 @@
             margin: 20px;
             background-color: #f0f0f0;
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
         }
+
         .controls {
             background: white;
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         #fileInput {
             margin-bottom: 10px;
             padding: 8px;
@@ -28,6 +32,7 @@
             border-radius: 4px;
             width: 300px;
         }
+
         button {
             background: #007bff;
             color: white;
@@ -37,13 +42,15 @@
             cursor: pointer;
             margin-right: 10px;
         }
+
         button:hover {
             background: #0056b3;
         }
+
         #graphContainer {
             background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             overflow: visible;
             width: 100%;
             max-width: 100vw;
@@ -54,6 +61,7 @@
             justify-content: center;
             align-items: center;
         }
+
         svg {
             border: 1px solid #ddd;
             width: 100%;
@@ -62,15 +70,14 @@
             max-height: 100vh;
             display: block;
         }
+
         .city-circle {
             fill: lightblue;
             stroke: #4682b4;
             stroke-width: 2;
             cursor: pointer;
         }
-        .city-circle:hover {
-            fill: #87ceeb;
-        }
+
         .city-label {
             font-size: 8px;
             font-weight: bold;
@@ -79,12 +86,14 @@
             dominant-baseline: middle;
             pointer-events: none;
         }
+
         .edge-line {
             stroke: gray;
             stroke-width: 4;
             fill: none;
             opacity: 0.8;
         }
+
         .edge-cost {
             font-size: 10px;
             fill: black;
@@ -94,27 +103,32 @@
             background: white;
             pointer-events: none;
         }
+
         .info {
             margin-top: 20px;
             padding: 15px;
             background: #e9ecef;
             border-radius: 4px;
         }
+
         .status {
             margin-top: 10px;
             padding: 10px;
             border-radius: 4px;
         }
+
         .status.success {
             background: #d4edda;
             color: #155724;
             border: 1px solid #c3e6cb;
         }
+
         .status.error {
             background: #f8d7da;
             color: #721c24;
             border: 1px solid #f5c6cb;
         }
+
         .graph-stats {
             margin-top: 10px;
             font-size: 14px;
@@ -122,21 +136,22 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Ticket to Ride Graph Viewer</h1>
-        
+
         <div class="controls">
             <h3>Load Graph Data</h3>
             <input type="file" id="fileInput" accept=".json" />
             <button onclick="loadFromFile()">Load from File</button>
             <div id="status"></div>
         </div>
-        
+
         <div id="graphContainer">
             <svg id="graphSvg"></svg>
         </div>
-        
+
         <div class="info">
             <p><strong>Instructions:</strong></p>
             <ul>
@@ -144,9 +159,8 @@
                 <li>Expected format: JSON with "cities" array and "connections" array</li>
                 <li>Each connection has city1, city2, color, cost, and id fields</li>
                 <li>Light blue circles represent cities with names inside</li>
-                <li>Colored lines represent train routes with costs displayed in white circles</li>
+                <li>Dashed colored lines represent train routes with costs displayed in white circles</li>
                 <li>Multiple connections between the same cities are arranged in parallel</li>
-                <li>Hover over cities to see them highlighted</li>
             </ul>
             <div id="graphStats" class="graph-stats"></div>
         </div>
@@ -164,29 +178,29 @@
         function updateGraphStats(data) {
             const cities = data.cities;
             const connections = data.connections || [];
-            
-            document.getElementById('graphStats').innerHTML = 
+
+            document.getElementById('graphStats').innerHTML =
                 `Graph loaded: ${cities.length} cities, ${connections.length} routes`;
         }
 
         function loadFromFile() {
             const fileInput = document.getElementById('fileInput');
             const file = fileInput.files[0];
-            
+
             if (!file) {
                 showStatus('Please select a JSON file first.', true);
                 return;
             }
-            
+
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 try {
                     const data = JSON.parse(e.target.result);
-                    
+
                     if (!data.cities || !Array.isArray(data.cities)) {
                         throw new Error('Invalid format: Expected "cities" array in JSON');
                     }
-                    
+
                     graphData = data;
                     renderGraph(data);
                     updateGraphStats(data);
@@ -195,23 +209,23 @@
                     showStatus('Error loading file: ' + error.message, true);
                 }
             };
-            
+
             reader.readAsText(file);
         }
 
         function renderGraph(data) {
             const svg = document.getElementById('graphSvg');
             svg.innerHTML = ''; // Clear existing content
-            
+
             const cities = data.cities;
             const connections = data.connections || [];
-            
+
             // Create a map of city names to coordinates for quick lookup
             const cityMap = {};
             cities.forEach(city => {
                 cityMap[city.name] = { x: city.x, y: city.y };
             });
-            
+
             // Calculate bounds for auto-sizing
             let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
             cities.forEach(city => {
@@ -220,39 +234,39 @@
                 minY = Math.min(minY, city.y);
                 maxY = Math.max(maxY, city.y);
             });
-            
+
             // Calculate available space
             const container = document.getElementById('graphContainer');
             const containerWidth = container.clientWidth || 1100;
             const containerHeight = container.clientHeight || 700;
-            
+
             // Add padding and calculate scale to fit in viewport
             const padding = 50;
             const availableWidth = containerWidth - padding * 2;
             const availableHeight = containerHeight - padding * 2;
-            
+
             const dataWidth = maxX - minX;
             const dataHeight = maxY - minY;
-            
+
             const scaleX = availableWidth / dataWidth;
             const scaleY = availableHeight / dataHeight;
             const scale = Math.min(scaleX, scaleY, 3); // Cap at 3x for readability
-            
+
             const width = dataWidth * scale + padding * 2;
             const height = dataHeight * scale + padding * 2;
-            
+
             svg.setAttribute('width', width);
             svg.setAttribute('height', height);
-            
+
             // Transform coordinates
             function transformX(x) {
                 return (x - minX) * scale + padding;
             }
-            
+
             function transformY(y) {
                 return (y - minY) * scale + padding;
             }
-            
+
             // Group connections by city pairs for handling multiple edges
             const connectionGroups = {};
             connections.forEach(conn => {
@@ -262,42 +276,42 @@
                 }
                 connectionGroups[key].push(conn);
             });
-            
+
             // Draw edges first (so they appear behind cities)
             Object.values(connectionGroups).forEach(group => {
                 // Draw all edges for this city pair
                 group.forEach((conn, index) => {
                     const city1 = cityMap[conn.city1];
                     const city2 = cityMap[conn.city2];
-                    
+
                     if (!city1 || !city2) {
                         console.warn(`City not found: ${conn.city1} or ${conn.city2}`);
                         return;
                     }
-                    
+
                     const x1 = transformX(city1.x);
                     const y1 = transformY(city1.y);
                     const x2 = transformX(city2.x);
                     const y2 = transformY(city2.y);
-                    
+
                     const offset = (group.length > 1) ? (index - (group.length - 1) / 2) * 8 : 0;
-                    
+
                     // Calculate perpendicular vector for offset
                     const dx = x2 - x1;
                     const dy = y2 - y1;
                     const length = Math.sqrt(dx * dx + dy * dy);
-                    
+
                     if (length > 0) {
                         const perpX = -dy / length * offset;
                         const perpY = dx / length * offset;
-                        
+
                         const offsetX1 = x1 + perpX;
                         const offsetY1 = y1 + perpY;
                         const offsetX2 = x2 + perpX;
                         const offsetY2 = y2 + perpY;
-                        
+
                         // Draw edge line using proper SVG stroke properties
-                        // Draw gray border (thick line)
+                        // Draw gray border (thick line) - also dashed
                         const borderLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
                         borderLine.setAttribute('x1', offsetX1);
                         borderLine.setAttribute('y1', offsetY1);
@@ -306,10 +320,11 @@
                         borderLine.setAttribute('stroke', 'gray');
                         borderLine.setAttribute('stroke-width', 6);
                         borderLine.setAttribute('stroke-linecap', 'round');
+                        borderLine.setAttribute('stroke-dasharray', '10,5'); // Dashed pattern
                         borderLine.setAttribute('fill', 'none');
                         svg.appendChild(borderLine);
-                        
-                        // Draw colored fill (thinner line on top)
+
+                        // Draw colored fill (thinner line on top) - dashed
                         const fillLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
                         fillLine.setAttribute('x1', offsetX1);
                         fillLine.setAttribute('y1', offsetY1);
@@ -318,33 +333,34 @@
                         fillLine.setAttribute('stroke', conn.color);
                         fillLine.setAttribute('stroke-width', 4);
                         fillLine.setAttribute('stroke-linecap', 'round');
+                        fillLine.setAttribute('stroke-dasharray', '8,4'); // Dashed pattern
                         fillLine.setAttribute('fill', 'none');
                         fillLine.setAttribute('opacity', '0.8');
                         svg.appendChild(fillLine);
                     }
                 });
             });
-            
+
             // Draw cost circles after edges (so they appear on top)
             Object.values(connectionGroups).forEach(group => {
                 // Draw one cost circle per city pair (use the first connection's cost)
                 const firstConn = group[0];
                 const city1 = cityMap[firstConn.city1];
                 const city2 = cityMap[firstConn.city2];
-                
+
                 if (!city1 || !city2) {
                     return;
                 }
-                
+
                 const x1 = transformX(city1.x);
                 const y1 = transformY(city1.y);
                 const x2 = transformX(city2.x);
                 const y2 = transformY(city2.y);
-                
+
                 // Calculate midpoint for cost circle
                 const midX = (x1 + x2) / 2;
                 const midY = (y1 + y2) / 2;
-                
+
                 // Draw cost circle and text (only once per city pair)
                 const costCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
                 costCircle.setAttribute('cx', midX);
@@ -354,7 +370,7 @@
                 costCircle.setAttribute('stroke', 'black');
                 costCircle.setAttribute('stroke-width', 2);
                 svg.appendChild(costCircle);
-                
+
                 const costText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 costText.setAttribute('x', midX);
                 costText.setAttribute('y', midY);
@@ -362,12 +378,12 @@
                 costText.textContent = firstConn.cost;
                 svg.appendChild(costText);
             });
-            
+
             // Draw cities
             cities.forEach(city => {
                 const x = transformX(city.x);
                 const y = transformY(city.y);
-                
+
                 // Split city name into words for multi-line display
                 let lines = [];
                 const words = city.name.split(' ');
@@ -391,11 +407,11 @@
                         lines.push(currentLine);
                     }
                 }
-                
+
                 // Calculate circle radius based on longest line length and number of lines
                 const longestLine = lines.reduce((max, line) => line.length > max.length ? line : max, '');
                 const radius = Math.max(16, longestLine.length * 2.7 + lines.length * 1.75);
-                
+
                 // Draw city circle
                 const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
                 circle.setAttribute('cx', x);
@@ -403,12 +419,12 @@
                 circle.setAttribute('r', radius);
                 circle.setAttribute('class', 'city-circle');
                 svg.appendChild(circle);
-                
+
                 // Draw city label with multiple lines
                 const lineHeight = 12;
                 const totalHeight = (lines.length - 1) * lineHeight;
                 const startY = y - totalHeight / 2;
-                
+
                 lines.forEach((line, index) => {
                     const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                     text.setAttribute('x', x);
@@ -421,9 +437,10 @@
         }
 
         // Initialize
-        document.getElementById('fileInput').addEventListener('change', function() {
+        document.getElementById('fileInput').addEventListener('change', function () {
             document.getElementById('status').innerHTML = '';
         });
     </script>
 </body>
+
 </html>
