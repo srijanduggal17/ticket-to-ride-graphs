@@ -187,700 +187,700 @@
             "city2": "Seattle",
             "color": "gray",
             "cost": 1,
-            "id": "bdaf63d5-b753-4f03-81b6-bd4220a78c71"
+            "id": "95c8367a-85b4-4913-87bc-23d54629e1d6"
         },
         {
             "city1": "Seattle",
             "city2": "Vancouver",
             "color": "gray",
             "cost": 1,
-            "id": "88699f75-d858-45ea-958c-8d6e4843a6d8"
+            "id": "90a6ead2-df03-4da2-80a1-875a47c4ec47"
         },
         {
             "city1": "Los Angeles",
             "city2": "San Francisco",
             "color": "yellow",
             "cost": 3,
-            "id": "2c74e012-d314-4b1c-8c1e-cef442790869"
+            "id": "ab864f5c-3432-45f7-8c62-45dc61d375a4"
         },
         {
             "city1": "El Paso",
             "city2": "Los Angeles",
             "color": "black",
             "cost": 6,
-            "id": "f8a7b6c5-d4e3-4f2g-9h1i-j2k3l4m5n6o7"
+            "id": "d62ff9a4-bf82-4068-955b-9ce3204dde61"
         },
         {
             "city1": "El Paso",
             "city2": "Phoenix",
             "color": "gray",
             "cost": 3,
-            "id": "05ed2291-2ae0-4900-b2ef-de925e1802ce"
+            "id": "f0fae85d-1850-4d88-a3fd-c9bdd80998d9"
         },
         {
             "city1": "Oklahoma City",
             "city2": "Santa Fe",
             "color": "blue",
             "cost": 3,
-            "id": "f8d9b7a4-65b1-40b5-88a6-dbfd1cd582a4"
+            "id": "e849dc61-49e1-42ad-ac67-38d60d6c8457"
         },
         {
             "city1": "Portland",
             "city2": "San Francisco",
             "color": "green",
             "cost": 5,
-            "id": "85c43508-5a78-4e55-b26e-6a2ca47b941a"
+            "id": "cf23de1c-c505-45ff-8236-5fb111873767"
         },
         {
             "city1": "Portland",
             "city2": "San Francisco",
             "color": "pink",
             "cost": 5,
-            "id": "45cac34d-a6f8-4a96-8d33-7263e847f214"
+            "id": "ca092103-04af-4f4c-bf45-ae342168b1e4"
         },
         {
             "city1": "Denver",
             "city2": "Salt Lake City",
             "color": "red",
             "cost": 3,
-            "id": "a91c13bf-d2e6-4396-aead-752d912e1977"
+            "id": "c01a3563-c05a-4bcf-9b46-b16d5258b9fa"
         },
         {
             "city1": "Helena",
             "city2": "Salt Lake City",
             "color": "pink",
             "cost": 3,
-            "id": "8b6563a9-10af-4f5d-bb76-b41ab6803fab"
+            "id": "0b4bfd0b-e824-4c7e-834d-a954294435e6"
         },
         {
             "city1": "Helena",
             "city2": "Seattle",
             "color": "yellow",
             "cost": 6,
-            "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+            "id": "985e1ebd-34b0-4014-b36d-a0035004becd"
         },
         {
             "city1": "Las Vegas",
             "city2": "Salt Lake City",
             "color": "orange",
             "cost": 3,
-            "id": "a3598d41-d503-4dec-ba36-1ee5cd7b52fa"
+            "id": "bf73cfba-3d04-4c21-83f5-345fa20cd574"
         },
         {
             "city1": "Denver",
             "city2": "Helena",
             "color": "green",
             "cost": 4,
-            "id": "d994456d-f390-49d5-8267-de06496713c0"
+            "id": "cef5a8f2-338d-43c7-8f44-3170b0277503"
         },
         {
             "city1": "Denver",
             "city2": "Omaha",
             "color": "pink",
             "cost": 4,
-            "id": "b3b4ee22-d65e-43cc-b14d-8a679c914c62"
+            "id": "db67a0a4-7f86-48f8-93a4-99f1ea428776"
         },
         {
             "city1": "Denver",
             "city2": "Kansas City",
             "color": "black",
             "cost": 4,
-            "id": "6fd0bfec-267a-4028-ac81-9784685f802f"
+            "id": "cb3b0612-c325-4773-8efd-ae9929404b93"
         },
         {
             "city1": "Denver",
             "city2": "Oklahoma City",
             "color": "red",
             "cost": 4,
-            "id": "e078977b-f44c-4f81-881d-393a6bb7d44c"
+            "id": "f98ddac7-c769-42f7-bb02-c079a03aec9b"
         },
         {
             "city1": "Duluth",
             "city2": "Omaha",
             "color": "gray",
             "cost": 2,
-            "id": "262e1086-b449-42ec-a867-8f63a3b222f3"
+            "id": "2452fbb4-ef75-4ac7-9f19-e0ef0a11efdc"
         },
         {
             "city1": "Kansas City",
             "city2": "Omaha",
             "color": "gray",
             "cost": 1,
-            "id": "432d40ef-a9de-4fc3-a70c-caaceea2b500"
+            "id": "fe3ac879-eee0-4c03-b6b9-b5e450636500"
         },
         {
             "city1": "Kansas City",
             "city2": "Oklahoma City",
             "color": "gray",
             "cost": 2,
-            "id": "0b71ab93-cdc3-45a0-8f45-5df60f585fe5"
+            "id": "a3ff40f0-1824-4855-a5b8-65b18c6d153e"
         },
         {
             "city1": "Dallas",
             "city2": "Houston",
             "color": "gray",
             "cost": 1,
-            "id": "8cae4547-7580-40e9-a9fd-49354ded1d6b"
+            "id": "000550a6-c9d8-4c6f-8e0e-e756cf2bb278"
         },
         {
             "city1": "Dallas",
             "city2": "Oklahoma City",
             "color": "gray",
             "cost": 2,
-            "id": "19246ff3-17ad-4ebc-a129-e0487f952ea8"
+            "id": "4dd60013-4ad4-44fd-8370-458f4747b69b"
         },
         {
             "city1": "El Paso",
             "city2": "Oklahoma City",
             "color": "yellow",
             "cost": 5,
-            "id": "939e5e58-fb1a-4c1c-b5dd-d694672922e6"
+            "id": "dd63eddb-5ab0-4ea6-95ea-747eb76d3429"
         },
         {
             "city1": "Dallas",
             "city2": "El Paso",
             "color": "red",
             "cost": 4,
-            "id": "e9cdd08f-659a-4645-9615-a338ced4c938"
+            "id": "ac27c687-e364-401f-bbd8-59a0a9e25672"
         },
         {
             "city1": "Chicago",
             "city2": "Duluth",
             "color": "red",
             "cost": 3,
-            "id": "018dedde-577e-4bfa-82e1-0a081f83900f"
+            "id": "fd50cd8b-fe51-4952-8432-e88748e2c9be"
         },
         {
             "city1": "Chicago",
             "city2": "Omaha",
             "color": "blue",
             "cost": 4,
-            "id": "bd78744d-9e0b-44e0-92e7-23cd3acd0e13"
+            "id": "28ed17dd-11d0-4843-a5cd-2f2bc3199206"
         },
         {
             "city1": "Chicago",
             "city2": "Saint Louis",
             "color": "green",
             "cost": 2,
-            "id": "b3d9aeb5-4475-4130-8ea5-0f68d3298d75"
+            "id": "0bee5b6d-97a4-4dfc-ad54-ae372cf429af"
         },
         {
             "city1": "Chicago",
             "city2": "Pittsburgh",
             "color": "orange",
             "cost": 3,
-            "id": "ee77c459-59fa-4b68-b0ea-8d97d85f4dfa"
+            "id": "6fd4bcb1-e1f1-4eb2-8d4e-f34d1ca39aca"
         },
         {
             "city1": "Chicago",
             "city2": "Toronto",
             "color": "white",
             "cost": 4,
-            "id": "0653c135-fafb-4793-b22d-0ef3f049a8e4"
+            "id": "44c73fc7-3416-4ae8-be7b-18a6fd65d8ee"
         },
         {
             "city1": "Kansas City",
             "city2": "Saint Louis",
             "color": "blue",
             "cost": 2,
-            "id": "b4383b93-0efc-427b-aacb-76f1df680ae4"
+            "id": "f3f2aba0-72b5-4d05-93c3-8abf19fd915c"
         },
         {
             "city1": "Little Rock",
             "city2": "New Orleans",
             "color": "green",
             "cost": 3,
-            "id": "11a1a094-9988-472b-8bf7-035fd8049340"
+            "id": "f7eeb06f-0631-4a54-88f6-3675f2908555"
         },
         {
             "city1": "Miami",
             "city2": "New Orleans",
             "color": "red",
             "cost": 6,
-            "id": "b1c2d3e4-f5g6-7890-h1i2-j3k4l5m6n7o8"
+            "id": "c3f45684-9968-4d79-bb8b-1d2efd9379a0"
         },
         {
             "city1": "Atlanta",
             "city2": "New Orleans",
             "color": "orange",
             "cost": 4,
-            "id": "c2d3e4f5-g6h7-8901-i2j3-k4l5m6n7o8p9"
+            "id": "b46b92b0-1006-40de-b911-8f7b995eeff2"
         },
         {
             "city1": "Atlanta",
             "city2": "New Orleans",
             "color": "yellow",
             "cost": 4,
-            "id": "d3e4f5g6-h7i8-9012-j3k4-l5m6n7o8p9q0"
+            "id": "bae1c8be-0aee-4318-8274-b702b7d6c987"
         },
         {
             "city1": "Montreal",
             "city2": "Sault St. Marie",
             "color": "black",
             "cost": 5,
-            "id": "1fb0f0ff-18d4-479b-8184-6f9723c3089b"
+            "id": "80bf9e65-6143-494b-ae1b-c641668dc636"
         },
         {
             "city1": "Montreal",
             "city2": "New York",
             "color": "blue",
             "cost": 3,
-            "id": "e4f5g6h7-i8j9-0123-k4l5-m6n7o8p9q0r1"
+            "id": "95f550e8-d634-4780-bc1d-331fdd67e0e4"
         },
         {
             "city1": "Pittsburgh",
             "city2": "Saint Louis",
             "color": "green",
             "cost": 5,
-            "id": "2857ad1e-3adf-4926-ac35-fe457b408c15"
+            "id": "ac80f58d-ef58-40e8-8a73-1251c4e66a46"
         },
         {
             "city1": "Nashville",
             "city2": "Pittsburgh",
             "color": "yellow",
             "cost": 4,
-            "id": "fd0ab823-a6d5-4909-afa9-583c719cb66b"
+            "id": "0342946c-ea1e-4156-a3d2-0cd28f53ab20"
         },
         {
             "city1": "Pittsburgh",
             "city2": "Raleigh",
             "color": "gray",
             "cost": 2,
-            "id": "8bfcca30-5542-4fb9-a20d-4af6ada2b9d9"
+            "id": "942557b1-1433-4b99-acdd-2485ca0d0eb5"
         },
         {
             "city1": "Pittsburgh",
             "city2": "Washington",
             "color": "gray",
             "cost": 2,
-            "id": "f9bbea82-7e7e-47f6-904d-5d68b0277334"
+            "id": "91c0ef6e-96c3-41bb-b5e9-7666e9a1bac4"
         },
         {
             "city1": "New York",
             "city2": "Pittsburgh",
             "color": "white",
             "cost": 2,
-            "id": "d6c47c04-d522-4340-a2f0-6cad3ae5c875"
+            "id": "aa5700f9-8c88-4f9f-b981-f4a41d9b7287"
         },
         {
             "city1": "Nashville",
             "city2": "Raleigh",
             "color": "black",
             "cost": 3,
-            "id": "5e8d0199-c79d-433c-9fc1-c1edfa1ce31d"
+            "id": "c0a31645-a1e8-4e81-a863-b40adb763651"
         },
         {
             "city1": "Atlanta",
             "city2": "Raleigh",
             "color": "gray",
             "cost": 2,
-            "id": "f9d99128-4f69-49d9-8cf7-87607708b65f"
+            "id": "a38ee9f2-9ffb-43d2-a7d0-fae1b4beb6bc"
         },
         {
             "city1": "Atlanta",
             "city2": "Miami",
             "color": "blue",
             "cost": 5,
-            "id": "2d0e9fba-9f82-4995-a627-483dc03bd44f"
+            "id": "cf313744-55dd-4295-87c7-af7f294d9b77"
         },
         {
             "city1": "Charleston",
             "city2": "Miami",
             "color": "pink",
             "cost": 4,
-            "id": "efecbf5a-8b60-4db6-8459-748fe8f7369c"
+            "id": "ac8e0e17-e125-4a1e-97e4-a7caf407b3b8"
         },
         {
             "city1": "Boston",
             "city2": "Montreal",
             "color": "gray",
             "cost": 2,
-            "id": "d4b2eb9a-1fad-4130-996b-21dfdc58e903"
+            "id": "416ce36b-a971-4aca-8c2c-4bf06868cf15"
         },
         {
             "city1": "Boston",
             "city2": "New York",
             "color": "yellow",
             "cost": 2,
-            "id": "e9d7d792-5164-43b5-a36c-a34fefec0c0a"
+            "id": "2f7862e9-8844-4311-b06d-cc0e0265ee11"
         },
         {
             "city1": "New York",
             "city2": "Washington",
             "color": "orange",
             "cost": 2,
-            "id": "86bb5553-682b-4408-9727-08acd4727a6f"
+            "id": "48174b71-181e-484c-83fd-e3368c548a36"
         },
         {
             "city1": "Raleigh",
             "city2": "Washington",
             "color": "gray",
             "cost": 2,
-            "id": "e171f95b-16b0-4b7a-9aee-cc3686086bd5"
+            "id": "a326895a-ca3d-4600-b19c-3fea73da893a"
         },
         {
             "city1": "Calgary",
             "city2": "Winnipeg",
             "color": "white",
             "cost": 6,
-            "id": "3dbb54d9-28d9-49e3-ab25-22aecc16184e"
+            "id": "c207bd42-4088-43fb-ab20-c495cf711fc1"
         },
         {
             "city1": "Sault St. Marie",
             "city2": "Winnipeg",
             "color": "gray",
             "cost": 6,
-            "id": "9c0f68f0-2505-4851-9f4a-a449ec71a4c2"
+            "id": "caf0c709-d1a3-4446-a477-136e99d783e0"
         },
         {
             "city1": "Helena",
             "city2": "Winnipeg",
             "color": "blue",
             "cost": 4,
-            "id": "1ccb079b-5c0b-4e4c-8a78-cf58939badd3"
+            "id": "ba14dfa3-82e5-4c61-95f0-19ae664aeba0"
         },
         {
             "city1": "Kansas City",
             "city2": "Saint Louis",
             "color": "pink",
             "cost": 2,
-            "id": "a7752b07-5e0a-4874-a3c7-2e3a1f154c9d"
+            "id": "8464a82f-ee10-4416-8a28-3b19da916986"
         },
         {
             "city1": "Chicago",
             "city2": "Saint Louis",
             "color": "white",
             "cost": 2,
-            "id": "d45dbb0a-7c83-4637-87a5-2022f46a39fb"
+            "id": "4aed36d0-643e-4930-bab7-9910d94a079e"
         },
         {
             "city1": "Denver",
             "city2": "Kansas City",
             "color": "orange",
             "cost": 4,
-            "id": "4441eb80-cb7e-4d8f-b581-9472b0d5f870"
+            "id": "ce302591-326a-48a9-9867-00ae9c220a14"
         },
         {
             "city1": "Little Rock",
             "city2": "Oklahoma City",
             "color": "gray",
             "cost": 2,
-            "id": "039e2743-a5cd-4daf-b262-7f74d85d8f36"
+            "id": "3cf2b790-814b-4b1a-9529-8981ff131c73"
         },
         {
             "city1": "El Paso",
             "city2": "Houston",
             "color": "green",
             "cost": 6,
-            "id": "cb21122b-24a4-4291-8058-2735893b15b3"
+            "id": "c435eab7-5d8a-47a6-b836-605d6e3a8bd1"
         },
         {
             "city1": "Phoenix",
             "city2": "Santa Fe",
             "color": "gray",
             "cost": 3,
-            "id": "63d27a6a-79e6-4144-9ec9-53021e8b5427"
+            "id": "4cf00f16-7379-4c1f-a714-0a3bd40d6e8e"
         },
         {
             "city1": "El Paso",
             "city2": "Santa Fe",
             "color": "gray",
             "cost": 2,
-            "id": "c5908807-685b-409f-b647-8c9ea31d1b80"
+            "id": "86999b61-b655-4ff2-8feb-6559800df853"
         },
         {
             "city1": "Denver",
             "city2": "Santa Fe",
             "color": "gray",
             "cost": 2,
-            "id": "be840eaa-f940-4e85-8926-58b48fcdd021"
+            "id": "f2c6c1de-1134-4d93-832b-dd2380f2eb4c"
         },
         {
             "city1": "Duluth",
             "city2": "Helena",
             "color": "orange",
             "cost": 6,
-            "id": "33fcd807-9356-4c26-8ab6-3dd324acd1f7"
+            "id": "0e53bd53-c20e-4fa5-af9c-1d6d9ff05a4f"
         },
         {
             "city1": "Denver",
             "city2": "Salt Lake City",
             "color": "yellow",
             "cost": 3,
-            "id": "a8a86608-888c-43a1-8ef4-fe31d59a55bb"
+            "id": "0b928110-00d1-419d-adf5-a22c4e95f7c3"
         },
         {
             "city1": "Calgary",
             "city2": "Helena",
             "color": "gray",
             "cost": 4,
-            "id": "a2fc7d48-bb82-4d7f-a171-0d9f07f339d3"
+            "id": "47434ff3-9164-411b-8fab-31dc9adac9ed"
         },
         {
             "city1": "Calgary",
             "city2": "Vancouver",
             "color": "gray",
             "cost": 3,
-            "id": "eba67c8d-8dd3-4ed9-944b-a1504ce6eed3"
+            "id": "3f199021-abb2-4e1a-b4e7-7d796ffc6b9f"
         },
         {
             "city1": "Calgary",
             "city2": "Seattle",
             "color": "gray",
             "cost": 4,
-            "id": "e5cb3bb9-aef8-4163-967d-059dd525de5c"
+            "id": "36691691-bc7a-4d00-89dd-d40f689db6a3"
         },
         {
             "city1": "Seattle",
             "city2": "Vancouver",
             "color": "gray",
             "cost": 1,
-            "id": "6491dfe8-230d-43d7-8eac-65a9eb137bbd"
+            "id": "b1d86a05-6e5c-4c6d-8cba-2cd0138a3c4e"
         },
         {
             "city1": "Portland",
             "city2": "Seattle",
             "color": "gray",
             "cost": 1,
-            "id": "804d4b9c-29c6-4e2f-b17e-c18ae554f425"
+            "id": "891984d6-75c9-47fb-80ce-810abf2fa004"
         },
         {
             "city1": "Los Angeles",
             "city2": "San Francisco",
             "color": "pink",
             "cost": 3,
-            "id": "0ac9cbee-6000-4818-95f5-c8e64355dad6"
+            "id": "3a6b11c2-882c-41c2-9b95-62092ce84602"
         },
         {
             "city1": "Las Vegas",
             "city2": "Los Angeles",
             "color": "gray",
             "cost": 2,
-            "id": "f1b5c6f1-ddcb-4ab6-bf32-459526bc44e3"
+            "id": "a2227eef-c289-46f3-8989-fefa72675454"
         },
         {
             "city1": "Los Angeles",
             "city2": "Phoenix",
             "color": "gray",
             "cost": 3,
-            "id": "39fb1b4e-20a3-4ee2-a2e7-439e57c28de1"
+            "id": "561a9321-2de1-4f9a-ac48-5fe692267478"
         },
         {
             "city1": "Duluth",
             "city2": "Omaha",
             "color": "gray",
             "cost": 2,
-            "id": "f16f325c-174e-47e7-aac3-0f9d25680a81"
+            "id": "6f010957-f115-478a-8614-78cfb1f60961"
         },
         {
             "city1": "Kansas City",
             "city2": "Omaha",
             "color": "gray",
             "cost": 1,
-            "id": "94c03eea-d7b2-465a-b3aa-39f73ead7ca6"
+            "id": "7a935bff-f130-4587-8124-cb7c17ed1fa7"
         },
         {
             "city1": "Kansas City",
             "city2": "Oklahoma City",
             "color": "gray",
             "cost": 2,
-            "id": "bbf874a7-40c7-4fc8-a809-feed4cd361e4"
+            "id": "e29fb3ef-ce09-4fc5-a13e-c8d04ae9c0e2"
         },
         {
             "city1": "Dallas",
             "city2": "Oklahoma City",
             "color": "gray",
             "cost": 2,
-            "id": "7a1f8853-de0e-4f0f-a358-cf58971cae64"
+            "id": "b458a609-fd12-4575-8ddc-63c2bc915c15"
         },
         {
             "city1": "Dallas",
             "city2": "Houston",
             "color": "gray",
             "cost": 1,
-            "id": "d5e13354-0ede-4213-9dd7-3b7f4f979fd4"
+            "id": "ef4d7144-add1-4586-bb30-25e31ef58cfa"
         },
         {
             "city1": "Houston",
             "city2": "New Orleans",
             "color": "gray",
             "cost": 2,
-            "id": "576bd874-51e5-4e26-9209-8d00e738116c"
+            "id": "a4e7c0b5-0b09-4186-9824-f49a8ad78264"
         },
         {
             "city1": "Duluth",
             "city2": "Toronto",
             "color": "pink",
             "cost": 6,
-            "id": "e8834607-a895-44c6-aee6-e74b422ee6c9"
+            "id": "d62c24df-7461-44ad-a5e6-bd59bcdf3898"
         },
         {
             "city1": "Chicago",
             "city2": "Pittsburgh",
             "color": "black",
             "cost": 3,
-            "id": "decfcb22-60d2-4a44-bcb8-1b539f589c3c"
+            "id": "c94100d7-d126-4f94-ae87-52f18a6c0fc1"
         },
         {
             "city1": "Little Rock",
             "city2": "Saint Louis",
             "color": "gray",
             "cost": 2,
-            "id": "6e8e14fd-aa3d-4bfc-8691-233284443e0b"
+            "id": "554a1736-a80a-4635-a781-4bc4066a3cb4"
         },
         {
             "city1": "Nashville",
             "city2": "Saint Louis",
             "color": "gray",
             "cost": 2,
-            "id": "fc24e3d6-6990-4fa8-9c13-eb9f4d8e0e9c"
+            "id": "a713a0e2-7c16-4d7d-94e1-9581c91d4a14"
         },
         {
             "city1": "Dallas",
             "city2": "Little Rock",
             "color": "gray",
             "cost": 2,
-            "id": "8a6877f6-f131-4573-9100-4579f7edf938"
+            "id": "88ef1f15-f7dc-47d1-a7dc-d0343c22026e"
         },
         {
             "city1": "Duluth",
             "city2": "Sault St. Marie",
             "color": "gray",
             "cost": 3,
-            "id": "d8639fec-8055-4cb7-b301-bd514926dd5f"
+            "id": "73b57f43-3e0e-4e7f-9937-2426ff4b1cd6"
         },
         {
             "city1": "Sault St. Marie",
             "city2": "Toronto",
             "color": "gray",
             "cost": 2,
-            "id": "5bb54bd3-b6d8-4160-b504-fb4189d24ee9"
+            "id": "721098ed-eda4-4640-a183-2fb72d225b19"
         },
         {
             "city1": "Montreal",
             "city2": "Toronto",
             "color": "gray",
             "cost": 3,
-            "id": "a1796ca9-3662-449c-8e93-3bfd87e67a6b"
+            "id": "67b5731f-392f-41ca-97c8-e3ba20be232a"
         },
         {
             "city1": "New York",
             "city2": "Pittsburgh",
             "color": "green",
             "cost": 2,
-            "id": "48e33cf8-bf07-4d73-bef9-84f729e7ec96"
+            "id": "39904600-2c02-4b9f-9ad9-8eefecfcf1a1"
         },
         {
             "city1": "Pittsburgh",
             "city2": "Toronto",
             "color": "gray",
             "cost": 2,
-            "id": "146b37f1-33cf-498e-b035-bec151525d86"
+            "id": "457d8468-f258-4f1a-a9fc-0b1bbf89782b"
         },
         {
             "city1": "Atlanta",
             "city2": "Nashville",
             "color": "gray",
             "cost": 1,
-            "id": "8aeb84cb-4888-431a-b89c-993fdefc94a8"
+            "id": "bb0144bb-7ff1-4bcb-aa90-787441a212cc"
         },
         {
             "city1": "Atlanta",
             "city2": "Raleigh",
             "color": "gray",
             "cost": 2,
-            "id": "32caf430-ddc2-40aa-8e19-106245a92d56"
+            "id": "2a7d27cb-81ba-486c-add9-a12cd4b268f5"
         },
         {
             "city1": "Atlanta",
             "city2": "Charleston",
             "color": "gray",
             "cost": 2,
-            "id": "b8dba2c0-0812-48db-868d-0430e9058bbb"
+            "id": "d022da7f-8f76-441f-a88c-24e09732c72f"
         },
         {
             "city1": "Charleston",
             "city2": "Raleigh",
             "color": "gray",
             "cost": 2,
-            "id": "9504d661-f983-4209-a7aa-299b9638bb5d"
+            "id": "c485c805-3bb1-47bf-9b89-b90f76fd7864"
         },
         {
             "city1": "Boston",
             "city2": "Montreal",
             "color": "gray",
             "cost": 2,
-            "id": "30cb3ffe-d07a-4c83-80af-cb28da9ee41b"
+            "id": "b9159d2d-a26a-4108-90d6-ed44a950fb1e"
         },
         {
             "city1": "Boston",
             "city2": "New York",
             "color": "red",
             "cost": 2,
-            "id": "25b33260-c3f6-455a-9824-8929506dd5bc"
+            "id": "8ae546f2-2724-4f80-8894-de1a329c3292"
         },
         {
             "city1": "New York",
             "city2": "Washington",
             "color": "black",
             "cost": 2,
-            "id": "52a573b1-705c-4ac4-a5cc-0f32560e907c"
+            "id": "7f168d4d-44d7-457b-bed8-00172a2c6a6a"
         },
         {
             "city1": "Raleigh",
             "city2": "Washington",
             "color": "gray",
             "cost": 2,
-            "id": "f938d77b-faf0-4f80-a369-744d315e269d"
+            "id": "3ca146ab-83ef-47b1-ab3f-fc3471d5baed"
         },
         {
             "city1": "Duluth",
             "city2": "Winnipeg",
             "color": "black",
             "cost": 4,
-            "id": "9dc02a97-dbc4-4e3b-ae3c-c93eb7504313"
+            "id": "7659270a-865b-4b2a-970c-d123b2964510"
         },
         {
             "city1": "Helena",
             "city2": "Omaha",
             "color": "red",
             "cost": 5,
-            "id": "01fee213-ade4-410f-9d83-09cabccae522"
+            "id": "70412043-cd76-42fb-844f-5556aebc1d48"
         },
         {
             "city1": "Portland",
             "city2": "Salt Lake City",
             "color": "blue",
             "cost": 6,
-            "id": "portland-saltlake-blue-6"
+            "id": "be82265f-2eb4-4e92-a83d-5d18832b84d1"
         },
         {
             "city1": "Salt Lake City",
             "city2": "San Francisco",
             "color": "orange",
             "cost": 5,
-            "id": "sanfrancisco-saltlake-orange-5"
+            "id": "77772fbe-6660-492e-895c-5bb583bd8895"
         },
         {
             "city1": "Salt Lake City",
             "city2": "San Francisco",
             "color": "white",
             "cost": 5,
-            "id": "sanfrancisco-saltlake-white-5"
+            "id": "ce207cf1-7337-45d7-adbc-3788657692fd"
         },
         {
             "city1": "Denver",
             "city2": "Phoenix",
             "color": "white",
             "cost": 5,
-            "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567891"
+            "id": "e309fd12-ebd1-4522-88f5-395b839612e8"
         },
         {
             "city1": "Little Rock",
             "city2": "Nashville",
             "color": "white",
             "cost": 3,
-            "id": "h7i8j9k0-l1m2-3456-n7o8-p9q0r1s2t3u4"
+            "id": "8d25fe64-ff9f-435f-a0d2-37a4c73be175"
         }
     ]
 }
