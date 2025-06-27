@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.controls {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#fileInput {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#graphContainer {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+    width: 100%;
+    max-width: 100vw;
+    height: 100vh;
+    min-height: 500px;
+    min-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+svg {
+    border: 1px solid #ddd;
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
+    display: block;
+}
+
+.city-circle {
+    fill: lightblue;
+    stroke: #4682b4;
+    stroke-width: 2;
+    cursor: pointer;
+}
+
+.city-label {
+    font-size: 8px;
+    font-weight: bold;
+    fill: black;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    pointer-events: none;
+}
+
+.edge-line {
+    stroke: gray;
+    stroke-width: 4;
+    fill: none;
+    opacity: 0.8;
+}
+
+.edge-cost {
+    font-size: 10px;
+    fill: black;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    font-weight: bold;
+    background: white;
+    pointer-events: none;
+}
+
+.info {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e9ecef;
+    border-radius: 4px;
+}
+
+.status {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.status.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.graph-stats {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+} 
