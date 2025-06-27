@@ -197,13 +197,6 @@
             "id": "88699f75-d858-45ea-958c-8d6e4843a6d8"
         },
         {
-            "city1": "Calgary",
-            "city2": "Vancouver",
-            "color": "gray",
-            "cost": 3,
-            "id": "9ddce8d0-b3e0-4b85-8867-17ce8499517c"
-        },
-        {
             "city1": "Los Angeles",
             "city2": "San Francisco",
             "color": "yellow",
@@ -263,10 +256,17 @@
             "city1": "Helena",
             "city2": "Salt Lake City",
             "color": "purple",
-                    "cost": 3,
+            "cost": 3,
             "id": "8b6563a9-10af-4f5d-bb76-b41ab6803fab"
-                },
-                {
+        },
+        {
+            "city1": "Helena",
+            "city2": "Seattle",
+            "color": "yellow",
+            "cost": 6,
+            "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+        },
+        {
             "city1": "Las Vegas",
             "city2": "Salt Lake City",
             "color": "orange",
@@ -601,13 +601,6 @@
             "color": "blue",
                     "cost": 4,
             "id": "1ccb079b-5c0b-4e4c-8a78-cf58939badd3"
-        },
-        {
-            "city1": "Calgary",
-            "city2": "Helena",
-            "color": "gray",
-                    "cost": 4,
-            "id": "164e0bd5-49ee-44d9-95df-e067bf8da6fc"
         },
         {
             "city1": "Kansas City",
@@ -1063,13 +1056,6 @@
             "color": "gray",
                     "cost": 2,
             "id": "f938d77b-faf0-4f80-a369-744d315e269d"
-        },
-        {
-            "city1": "Calgary",
-            "city2": "Winnipeg",
-            "color": "gray",
-            "cost": 6,
-            "id": "0e08105d-d906-418a-ae04-d4972e98572a"
         },
         {
             "city1": "Duluth",
