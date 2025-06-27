@@ -204,8 +204,8 @@
             "id": "2c74e012-d314-4b1c-8c1e-cef442790869"
         },
         {
-            "city1": "Los Angeles",
-            "city2": "El Paso",
+            "city1": "El Paso",
+            "city2": "Los Angeles",
             "color": "black",
             "cost": 6,
             "id": "f8a7b6c5-d4e3-4f2g-9h1i-j2k3l4m5n6o7"
@@ -393,22 +393,22 @@
             "id": "11a1a094-9988-472b-8bf7-035fd8049340"
         },
         {
-            "city1": "New Orleans",
-            "city2": "Miami",
+            "city1": "Miami",
+            "city2": "New Orleans",
             "color": "red",
             "cost": 6,
             "id": "b1c2d3e4-f5g6-7890-h1i2-j3k4l5m6n7o8"
         },
         {
-            "city1": "New Orleans",
-            "city2": "Atlanta",
+            "city1": "Atlanta",
+            "city2": "New Orleans",
             "color": "orange",
             "cost": 4,
             "id": "c2d3e4f5-g6h7-8901-i2j3-k4l5m6n7o8p9"
         },
         {
-            "city1": "New Orleans",
-            "city2": "Atlanta",
+            "city1": "Atlanta",
+            "city2": "New Orleans",
             "color": "yellow",
             "cost": 4,
             "id": "d3e4f5g6-h7i8-9012-j3k4-l5m6n7o8p9q0"
@@ -855,15 +855,15 @@
             "id": "portland-saltlake-blue-6"
         },
         {
-            "city1": "San Francisco",
-            "city2": "Salt Lake City",
+            "city1": "Salt Lake City",
+            "city2": "San Francisco",
             "color": "orange",
             "cost": 5,
             "id": "sanfrancisco-saltlake-orange-5"
         },
         {
-            "city1": "San Francisco",
-            "city2": "Salt Lake City",
+            "city1": "Salt Lake City",
+            "city2": "San Francisco",
             "color": "white",
             "cost": 5,
             "id": "sanfrancisco-saltlake-white-5"
@@ -876,8 +876,8 @@
             "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567891"
         },
         {
-            "city1": "Nashville",
-            "city2": "Little Rock",
+            "city1": "Little Rock",
+            "city2": "Nashville",
             "color": "white",
             "cost": 3,
             "id": "h7i8j9k0-l1m2-3456-n7o8-p9q0r1s2t3u4"
