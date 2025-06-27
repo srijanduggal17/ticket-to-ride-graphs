@@ -220,52 +220,9 @@ function drawEdge(svg, city1, city2, conn, index, groupLength, transformX, trans
         const isClaimed = claimedBy !== null;
 
         if (currentViewMode === 'base') {
-            // Base Colors Mode: Show original colors with player overlay for claimed edges
+            // Base Colors Mode: Show original colors only (no player ownership)
             if (isClaimed) {
-                // Draw claimed edge with both original color and player color
-                
-                // 1. Gray border (thick line) - solid
-                const borderLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-                borderLine.setAttribute('x1', offsetX1);
-                borderLine.setAttribute('y1', offsetY1);
-                borderLine.setAttribute('x2', offsetX2);
-                borderLine.setAttribute('y2', offsetY2);
-                borderLine.setAttribute('stroke', 'gray');
-                borderLine.setAttribute('stroke-width', 8);
-                borderLine.setAttribute('stroke-linecap', 'round');
-                borderLine.setAttribute('stroke-dasharray', 'none');
-                borderLine.setAttribute('fill', 'none');
-                svg.appendChild(borderLine);
-
-                // 2. Original route color (medium line) - solid
-                const originalColorLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-                originalColorLine.setAttribute('x1', offsetX1);
-                originalColorLine.setAttribute('y1', offsetY1);
-                originalColorLine.setAttribute('x2', offsetX2);
-                originalColorLine.setAttribute('y2', offsetY2);
-                originalColorLine.setAttribute('stroke', conn.color);
-                originalColorLine.setAttribute('stroke-width', 6);
-                originalColorLine.setAttribute('stroke-linecap', 'round');
-                originalColorLine.setAttribute('stroke-dasharray', 'none');
-                originalColorLine.setAttribute('fill', 'none');
-                originalColorLine.setAttribute('opacity', '0.9');
-                svg.appendChild(originalColorLine);
-
-                // 3. Player color (thin line) - solid
-                const playerColorLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-                playerColorLine.setAttribute('x1', offsetX1);
-                playerColorLine.setAttribute('y1', offsetY1);
-                playerColorLine.setAttribute('x2', offsetX2);
-                playerColorLine.setAttribute('y2', offsetY2);
-                playerColorLine.setAttribute('stroke', claimedBy);
-                playerColorLine.setAttribute('stroke-width', 4);
-                playerColorLine.setAttribute('stroke-linecap', 'round');
-                playerColorLine.setAttribute('stroke-dasharray', 'none');
-                playerColorLine.setAttribute('fill', 'none');
-                playerColorLine.setAttribute('opacity', '1.0');
-                svg.appendChild(playerColorLine);
-            } else {
-                // Draw unclaimed edge (original style)
+                // Draw claimed edge with original color only (no player overlay)
                 
                 // Gray border (thick line) - dashed
                 const borderLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
@@ -280,7 +237,36 @@ function drawEdge(svg, city1, city2, conn, index, groupLength, transformX, trans
                 borderLine.setAttribute('fill', 'none');
                 svg.appendChild(borderLine);
 
-                // Original route color (thinner line) - dashed
+                // Original route color (medium line) - dashed
+                const originalColorLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                originalColorLine.setAttribute('x1', offsetX1);
+                originalColorLine.setAttribute('y1', offsetY1);
+                originalColorLine.setAttribute('x2', offsetX2);
+                originalColorLine.setAttribute('y2', offsetY2);
+                originalColorLine.setAttribute('stroke', conn.color);
+                originalColorLine.setAttribute('stroke-width', 4);
+                originalColorLine.setAttribute('stroke-linecap', 'round');
+                originalColorLine.setAttribute('stroke-dasharray', '8,4');
+                originalColorLine.setAttribute('fill', 'none');
+                originalColorLine.setAttribute('opacity', '1.0');
+                svg.appendChild(originalColorLine);
+            } else {
+                // Draw unclaimed edge with full opacity
+                
+                // Gray border (thick line) - dashed
+                const borderLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                borderLine.setAttribute('x1', offsetX1);
+                borderLine.setAttribute('y1', offsetY1);
+                borderLine.setAttribute('x2', offsetX2);
+                borderLine.setAttribute('y2', offsetY2);
+                borderLine.setAttribute('stroke', 'gray');
+                borderLine.setAttribute('stroke-width', 6);
+                borderLine.setAttribute('stroke-linecap', 'round');
+                borderLine.setAttribute('stroke-dasharray', '10,5');
+                borderLine.setAttribute('fill', 'none');
+                svg.appendChild(borderLine);
+
+                // Original route color (thinner line) - dashed with full opacity
                 const fillLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
                 fillLine.setAttribute('x1', offsetX1);
                 fillLine.setAttribute('y1', offsetY1);
@@ -291,7 +277,7 @@ function drawEdge(svg, city1, city2, conn, index, groupLength, transformX, trans
                 fillLine.setAttribute('stroke-linecap', 'round');
                 fillLine.setAttribute('stroke-dasharray', '8,4');
                 fillLine.setAttribute('fill', 'none');
-                fillLine.setAttribute('opacity', '0.8');
+                fillLine.setAttribute('opacity', '1.0');
                 svg.appendChild(fillLine);
             }
         } else {

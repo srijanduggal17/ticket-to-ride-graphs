@@ -15,11 +15,13 @@
         <div class="top-section">
             <div class="controls">
                 <h3>Load Graph Data</h3>
+                <p class="format-info">Format: JSON with "cities" array and "connections" array</p>
                 <input type="file" id="baseGraphInput" accept=".json" />
                 <button onclick="loadBaseGraph()">Load Base Graph</button>
                 <div id="baseGraphStatus"></div>
                 
                 <h3>Load Current Board State (Optional)</h3>
+                <p class="format-info">Format: JSON with player colors as keys and arrays of edge IDs as values</p>
                 <input type="file" id="boardStateInput" accept=".json" />
                 <button onclick="loadBoardState()">Load Board State</button>
                 <div id="boardStateStatus"></div>
@@ -32,26 +34,6 @@
                 <div id="viewModeStatus"></div>
                 
                 <div id="graphStats" class="graph-stats"></div>
-            </div>
-
-            <div class="instructions">
-                <h3>Instructions</h3>
-                <ul>
-                    <li><strong>Base Graph:</strong> Load the base board representation (cities and connections)</li>
-                    <li><strong>Board State:</strong> Load current game state showing which edges are claimed by players</li>
-                    <li><strong>View Modes:</strong>
-                        <ul>
-                            <li><strong>Base Colors:</strong> Shows original route colors (red, blue, green, etc.) with player colors overlaid for claimed routes</li>
-                            <li><strong>Player Ownership:</strong> Shows gray for unclaimed routes and player colors for claimed routes</li>
-                        </ul>
-                    </li>
-                    <li>Base graph format: JSON with "cities" array and "connections" array</li>
-                    <li>Board state format: JSON with player colors as keys and arrays of edge IDs as values</li>
-                    <li>Light blue circles represent cities with names inside</li>
-                    <li>Gray dashed lines represent available routes</li>
-                    <li>Colored solid lines represent claimed routes by players</li>
-                    <li>Cost numbers are displayed in white circles on each route</li>
-                </ul>
             </div>
         </div>
 
