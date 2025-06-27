@@ -210,12 +210,9 @@
             svg.innerHTML = ''; // Clear existing content
             
             const cities = data.cities;
-            const cityNames = Object.keys(cities);
-            
             // Calculate bounds for auto-sizing
             let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
-            cityNames.forEach(name => {
-                const city = cities[name];
+            cities.forEach(city => {
                 minX = Math.min(minX, city.x);
                 maxX = Math.max(maxX, city.x);
                 minY = Math.min(minY, city.y);
@@ -254,88 +251,8 @@
                 return (y - minY) * scale + padding;
             }
             
-            // Track drawn connections to avoid duplicates
-            const drawnConnections = new Set();
-            
-            // Draw edges first (so they appear behind cities)
-            cityNames.forEach(cityName => {
-                const city = cities[cityName];
-                const x1 = transformX(city.x);
-                const y1 = transformY(city.y);
-                
-                city.connections.forEach(connection => {
-                    const targetCity = cities[connection.city];
-                    if (!targetCity) return;
-                    
-                    const x2 = transformX(targetCity.x);
-                    const y2 = transformY(targetCity.y);
-                    
-                    // Create unique connection ID (sorted to avoid duplicates)
-                    const connectionId = [cityName, connection.city].sort().join('-') + '-' + connection.cost;
-                    
-                    if (!drawnConnections.has(connectionId)) {
-                        drawnConnections.add(connectionId);
-                        
-                        // Get count (default to 1 if not specified)
-                        const count = connection.count || 1;
-                        
-                        // Calculate parallel line offsets for multiple edges
-                        const dx = x2 - x1;
-                        const dy = y2 - y1;
-                        const length = Math.sqrt(dx * dx + dy * dy);
-                        const perpX = -dy / length;
-                        const perpY = dx / length;
-                        
-                        // Draw multiple parallel lines based on count
-                        for (let i = 0; i < count; i++) {
-                            let offsetX = 0, offsetY = 0;
-                            
-                            if (count > 1) {
-                                // Calculate offset for parallel lines
-                                const spacing = 8; // pixels between parallel lines
-                                const totalWidth = (count - 1) * spacing;
-                                const offset = (i * spacing) - (totalWidth / 2);
-                                offsetX = perpX * offset;
-                                offsetY = perpY * offset;
-                            }
-                            
-                            // Draw edge line
-                            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-                            line.setAttribute('x1', x1 + offsetX);
-                            line.setAttribute('y1', y1 + offsetY);
-                            line.setAttribute('x2', x2 + offsetX);
-                            line.setAttribute('y2', y2 + offsetY);
-                            line.setAttribute('class', 'edge-line');
-                            svg.appendChild(line);
-                        }
-                        
-                        // Add cost label at midpoint (only once per connection)
-                        const midX = (x1 + x2) / 2;
-                        const midY = (y1 + y2) / 2;
-                        
-                        // Create background circle for cost text
-                        const costBg = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-                        costBg.setAttribute('cx', midX);
-                        costBg.setAttribute('cy', midY);
-                        costBg.setAttribute('r', 10);
-                        costBg.setAttribute('fill', 'white');
-                        costBg.setAttribute('stroke', 'gray');
-                        costBg.setAttribute('stroke-width', 1);
-                        svg.appendChild(costBg);
-                        
-                        const costText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-                        costText.setAttribute('x', midX);
-                        costText.setAttribute('y', midY);
-                        costText.setAttribute('class', 'edge-cost');
-                        costText.textContent = connection.cost;
-                        svg.appendChild(costText);
-                    }
-                });
-            });
-            
             // Draw cities
-            cityNames.forEach(cityName => {
-                const city = cities[cityName];
+            cities.forEach(city => {
                 const x = transformX(city.x);
                 const y = transformY(city.y);
                 
