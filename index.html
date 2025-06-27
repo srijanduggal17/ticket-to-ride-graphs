@@ -13,7 +13,7 @@
         <h1>Ticket to Ride Graph Viewer</h1>
 
         <div class="top-section">
-            <div class="controls">
+            <div class="load-section">
                 <h3>Load Graph Data</h3>
                 <p class="format-info">Format: JSON with "cities" array and "connections" array</p>
                 <input type="file" id="baseGraphInput" accept=".json" />
@@ -25,18 +25,22 @@
                 <input type="file" id="boardStateInput" accept=".json" />
                 <button onclick="loadBoardState()">Load Board State</button>
                 <div id="boardStateStatus"></div>
+            </div>
+
+            <div class="updates-section">
+                <h3>Graph Statistics</h3>
+                <div id="graphStats" class="graph-stats"></div>
                 
                 <h3>View Mode</h3>
-                <div class="view-mode-toggle">
-                    <button id="baseColorsBtn" class="mode-btn active" onclick="setViewMode('base')">Base Colors</button>
-                    <button id="playerOwnershipBtn" class="mode-btn" onclick="setViewMode('ownership')">Player Ownership</button>
+                <div class="toggle-container">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="viewModeToggle" onchange="toggleViewMode()">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span class="toggle-label" id="toggleLabel">Base Colors</span>
                 </div>
-                <div id="viewModeStatus"></div>
-                
-                <div id="graphStats" class="graph-stats"></div>
             </div>
         </div>
-
         <div id="graphContainer">
             <svg id="graphSvg"></svg>
         </div>

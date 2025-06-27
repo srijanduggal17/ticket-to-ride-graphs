@@ -27,21 +27,21 @@ function updateGraphStats() {
             }
         });
     }
-    stats += `<br>View mode: ${currentViewMode === 'base' ? 'Base Colors' : 'Player Ownership'}`;
 
     document.getElementById('graphStats').innerHTML = stats;
 }
 
-function setViewMode(mode) {
-    currentViewMode = mode;
+function toggleViewMode() {
+    const toggle = document.getElementById('viewModeToggle');
+    const label = document.getElementById('toggleLabel');
     
-    // Update button states
-    document.getElementById('baseColorsBtn').classList.toggle('active', mode === 'base');
-    document.getElementById('playerOwnershipBtn').classList.toggle('active', mode === 'ownership');
-    
-    // Update status
-    const modeText = mode === 'base' ? 'Base Colors' : 'Player Ownership';
-    showStatus('viewModeStatus', `Switched to ${modeText} view`);
+    if (toggle.checked) {
+        currentViewMode = 'ownership';
+        label.textContent = 'Player Ownership';
+    } else {
+        currentViewMode = 'base';
+        label.textContent = 'Base Colors';
+    }
     
     // Re-render graph if data is loaded
     if (graphData) {
@@ -53,6 +53,7 @@ function setViewMode(mode) {
 function loadBaseGraph() {
     const fileInput = document.getElementById('baseGraphInput');
     const file = fileInput.files[0];
+    const loadButton = document.querySelector('button[onclick="loadBaseGraph()"]');
 
     if (!file) {
         showStatus('baseGraphStatus', 'Please select a JSON file first.', true);
@@ -71,7 +72,20 @@ function loadBaseGraph() {
             graphData = data;
             renderGraph();
             updateGraphStats();
-            showStatus('baseGraphStatus', 'Base graph loaded successfully!');
+            
+            // Clear any error messages
+            document.getElementById('baseGraphStatus').innerHTML = '';
+            
+            // Color button green
+            loadButton.style.backgroundColor = '#28a745';
+            loadButton.style.borderColor = '#28a745';
+            
+            // Reset button color after 2 seconds
+            setTimeout(() => {
+                loadButton.style.backgroundColor = '#007bff';
+                loadButton.style.borderColor = '#007bff';
+            }, 2000);
+            
         } catch (error) {
             showStatus('baseGraphStatus', 'Error loading file: ' + error.message, true);
         }
@@ -83,6 +97,7 @@ function loadBaseGraph() {
 function loadBoardState() {
     const fileInput = document.getElementById('boardStateInput');
     const file = fileInput.files[0];
+    const loadButton = document.querySelector('button[onclick="loadBoardState()"]');
 
     if (!file) {
         showStatus('boardStateStatus', 'Please select a JSON file first.', true);
@@ -115,7 +130,20 @@ function loadBoardState() {
             if (graphData) {
                 renderGraph();
                 updateGraphStats();
-                showStatus('boardStateStatus', 'Board state loaded successfully!');
+                
+                // Clear any error messages
+                document.getElementById('boardStateStatus').innerHTML = '';
+                
+                // Color button green
+                loadButton.style.backgroundColor = '#28a745';
+                loadButton.style.borderColor = '#28a745';
+                
+                // Reset button color after 2 seconds
+                setTimeout(() => {
+                    loadButton.style.backgroundColor = '#007bff';
+                    loadButton.style.borderColor = '#007bff';
+                }, 2000);
+                
             } else {
                 showStatus('boardStateStatus', 'Board state loaded, but no base graph is loaded yet.', true);
             }
