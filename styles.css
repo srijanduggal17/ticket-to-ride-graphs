@@ -46,6 +46,43 @@ body {
     line-height: 1.4;
 }
 
+.instructions ul ul {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.view-mode-toggle {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.mode-btn {
+    background: #e9ecef;
+    color: #495057;
+    border: 2px solid #dee2e6;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mode-btn:hover {
+    background: #dee2e6;
+    border-color: #adb5bd;
+}
+
+.mode-btn.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.mode-btn.active:hover {
+    background: #0056b3;
+    border-color: #0056b3;
+}
+
 #fileInput {
     margin-bottom: 10px;
     padding: 8px;

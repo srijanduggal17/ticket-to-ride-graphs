@@ -1,25 +1,61 @@
 let graphData = null;
+let boardState = null;
+let currentViewMode = 'base'; // 'base' or 'ownership'
 
-function showStatus(message, isError = false) {
-    const statusDiv = document.getElementById('status');
+function showStatus(elementId, message, isError = false) {
+    const statusDiv = document.getElementById(elementId);
     statusDiv.innerHTML = message;
     statusDiv.className = 'status ' + (isError ? 'error' : 'success');
 }
 
-function updateGraphStats(data) {
-    const cities = data.cities;
-    const connections = data.connections || [];
+function updateGraphStats() {
+    if (!graphData) {
+        document.getElementById('graphStats').innerHTML = 'No graph loaded';
+        return;
+    }
 
-    document.getElementById('graphStats').innerHTML =
-        `Graph loaded: ${cities.length} cities, ${connections.length} routes`;
+    const cities = graphData.cities;
+    const connections = graphData.connections || [];
+    const claimedEdges = boardState ? Object.values(boardState).flat().length : 0;
+
+    let stats = `Graph loaded: ${cities.length} cities, ${connections.length} routes`;
+    if (boardState) {
+        stats += `<br>Board state: ${claimedEdges} claimed edges`;
+        Object.entries(boardState).forEach(([player, edges]) => {
+            if (edges.length > 0) {
+                stats += `<br>  ${player}: ${edges.length} edges`;
+            }
+        });
+    }
+    stats += `<br>View mode: ${currentViewMode === 'base' ? 'Base Colors' : 'Player Ownership'}`;
+
+    document.getElementById('graphStats').innerHTML = stats;
 }
 
-function loadFromFile() {
-    const fileInput = document.getElementById('fileInput');
+function setViewMode(mode) {
+    currentViewMode = mode;
+    
+    // Update button states
+    document.getElementById('baseColorsBtn').classList.toggle('active', mode === 'base');
+    document.getElementById('playerOwnershipBtn').classList.toggle('active', mode === 'ownership');
+    
+    // Update status
+    const modeText = mode === 'base' ? 'Base Colors' : 'Player Ownership';
+    showStatus('viewModeStatus', `Switched to ${modeText} view`);
+    
+    // Re-render graph if data is loaded
+    if (graphData) {
+        renderGraph();
+        updateGraphStats();
+    }
+}
+
+function loadBaseGraph() {
+    const fileInput = document.getElementById('baseGraphInput');
     const file = fileInput.files[0];
 
     if (!file) {
-        showStatus('Please select a JSON file first.', true);
+        showStatus('baseGraphStatus', 'Please select a JSON file first.', true);
         return;
     }
 
@@ -33,15 +69,73 @@ function loadFromFile() {
             }
 
             graphData = data;
-            renderGraph(data);
-            updateGraphStats(data);
-            showStatus('Graph loaded successfully!');
+            renderGraph();
+            updateGraphStats();
+            showStatus('baseGraphStatus', 'Base graph loaded successfully!');
         } catch (error) {
-            showStatus('Error loading file: ' + error.message, true);
+            showStatus('baseGraphStatus', 'Error loading file: ' + error.message, true);
         }
     };
 
     reader.readAsText(file);
+}
+
+function loadBoardState() {
+    const fileInput = document.getElementById('boardStateInput');
+    const file = fileInput.files[0];
+
+    if (!file) {
+        showStatus('boardStateStatus', 'Please select a JSON file first.', true);
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        try {
+            const data = JSON.parse(e.target.result);
+
+            // Validate board state format
+            const expectedPlayers = ['red', 'blue', 'green', 'yellow', 'black'];
+            const foundPlayers = Object.keys(data);
+            
+            const missingPlayers = expectedPlayers.filter(player => !foundPlayers.includes(player));
+            if (missingPlayers.length > 0) {
+                throw new Error(`Missing required players: ${missingPlayers.join(', ')}`);
+            }
+
+            // Validate that all values are arrays
+            for (const [player, edges] of Object.entries(data)) {
+                if (!Array.isArray(edges)) {
+                    throw new Error(`Player '${player}' edges must be an array`);
+                }
+            }
+
+            boardState = data;
+            
+            if (graphData) {
+                renderGraph();
+                updateGraphStats();
+                showStatus('boardStateStatus', 'Board state loaded successfully!');
+            } else {
+                showStatus('boardStateStatus', 'Board state loaded, but no base graph is loaded yet.', true);
+            }
+        } catch (error) {
+            showStatus('boardStateStatus', 'Error loading file: ' + error.message, true);
+        }
+    };
+
+    reader.readAsText(file);
+}
+
+function isEdgeClaimed(edgeId) {
+    if (!boardState) return null;
+    
+    for (const [player, edges] of Object.entries(boardState)) {
+        if (edges.includes(edgeId)) {
+            return player;
+        }
+    }
+    return null;
 }
 
 function calculateGraphBounds(cities) {
@@ -122,32 +216,146 @@ function drawEdge(svg, city1, city2, conn, index, groupLength, transformX, trans
         const offsetX2 = x2 + perpX;
         const offsetY2 = y2 + perpY;
 
-        // Draw gray border (thick line) - dashed
-        const borderLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        borderLine.setAttribute('x1', offsetX1);
-        borderLine.setAttribute('y1', offsetY1);
-        borderLine.setAttribute('x2', offsetX2);
-        borderLine.setAttribute('y2', offsetY2);
-        borderLine.setAttribute('stroke', 'gray');
-        borderLine.setAttribute('stroke-width', 6);
-        borderLine.setAttribute('stroke-linecap', 'round');
-        borderLine.setAttribute('stroke-dasharray', '10,5');
-        borderLine.setAttribute('fill', 'none');
-        svg.appendChild(borderLine);
+        const claimedBy = isEdgeClaimed(conn.id);
+        const isClaimed = claimedBy !== null;
 
-        // Draw colored fill (thinner line on top) - dashed
-        const fillLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        fillLine.setAttribute('x1', offsetX1);
-        fillLine.setAttribute('y1', offsetY1);
-        fillLine.setAttribute('x2', offsetX2);
-        fillLine.setAttribute('y2', offsetY2);
-        fillLine.setAttribute('stroke', conn.color);
-        fillLine.setAttribute('stroke-width', 4);
-        fillLine.setAttribute('stroke-linecap', 'round');
-        fillLine.setAttribute('stroke-dasharray', '8,4');
-        fillLine.setAttribute('fill', 'none');
-        fillLine.setAttribute('opacity', '0.8');
-        svg.appendChild(fillLine);
+        if (currentViewMode === 'base') {
+            // Base Colors Mode: Show original colors with player overlay for claimed edges
+            if (isClaimed) {
+                // Draw claimed edge with both original color and player color
+                
+                // 1. Gray border (thick line) - solid
+                const borderLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                borderLine.setAttribute('x1', offsetX1);
+                borderLine.setAttribute('y1', offsetY1);
+                borderLine.setAttribute('x2', offsetX2);
+                borderLine.setAttribute('y2', offsetY2);
+                borderLine.setAttribute('stroke', 'gray');
+                borderLine.setAttribute('stroke-width', 8);
+                borderLine.setAttribute('stroke-linecap', 'round');
+                borderLine.setAttribute('stroke-dasharray', 'none');
+                borderLine.setAttribute('fill', 'none');
+                svg.appendChild(borderLine);
+
+                // 2. Original route color (medium line) - solid
+                const originalColorLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                originalColorLine.setAttribute('x1', offsetX1);
+                originalColorLine.setAttribute('y1', offsetY1);
+                originalColorLine.setAttribute('x2', offsetX2);
+                originalColorLine.setAttribute('y2', offsetY2);
+                originalColorLine.setAttribute('stroke', conn.color);
+                originalColorLine.setAttribute('stroke-width', 6);
+                originalColorLine.setAttribute('stroke-linecap', 'round');
+                originalColorLine.setAttribute('stroke-dasharray', 'none');
+                originalColorLine.setAttribute('fill', 'none');
+                originalColorLine.setAttribute('opacity', '0.9');
+                svg.appendChild(originalColorLine);
+
+                // 3. Player color (thin line) - solid
+                const playerColorLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                playerColorLine.setAttribute('x1', offsetX1);
+                playerColorLine.setAttribute('y1', offsetY1);
+                playerColorLine.setAttribute('x2', offsetX2);
+                playerColorLine.setAttribute('y2', offsetY2);
+                playerColorLine.setAttribute('stroke', claimedBy);
+                playerColorLine.setAttribute('stroke-width', 4);
+                playerColorLine.setAttribute('stroke-linecap', 'round');
+                playerColorLine.setAttribute('stroke-dasharray', 'none');
+                playerColorLine.setAttribute('fill', 'none');
+                playerColorLine.setAttribute('opacity', '1.0');
+                svg.appendChild(playerColorLine);
+            } else {
+                // Draw unclaimed edge (original style)
+                
+                // Gray border (thick line) - dashed
+                const borderLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                borderLine.setAttribute('x1', offsetX1);
+                borderLine.setAttribute('y1', offsetY1);
+                borderLine.setAttribute('x2', offsetX2);
+                borderLine.setAttribute('y2', offsetY2);
+                borderLine.setAttribute('stroke', 'gray');
+                borderLine.setAttribute('stroke-width', 6);
+                borderLine.setAttribute('stroke-linecap', 'round');
+                borderLine.setAttribute('stroke-dasharray', '10,5');
+                borderLine.setAttribute('fill', 'none');
+                svg.appendChild(borderLine);
+
+                // Original route color (thinner line) - dashed
+                const fillLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                fillLine.setAttribute('x1', offsetX1);
+                fillLine.setAttribute('y1', offsetY1);
+                fillLine.setAttribute('x2', offsetX2);
+                fillLine.setAttribute('y2', offsetY2);
+                fillLine.setAttribute('stroke', conn.color);
+                fillLine.setAttribute('stroke-width', 4);
+                fillLine.setAttribute('stroke-linecap', 'round');
+                fillLine.setAttribute('stroke-dasharray', '8,4');
+                fillLine.setAttribute('fill', 'none');
+                fillLine.setAttribute('opacity', '0.8');
+                svg.appendChild(fillLine);
+            }
+        } else {
+            // Player Ownership Mode: Show gray for unclaimed, player colors for claimed
+            if (isClaimed) {
+                // Draw claimed edge in player color
+                
+                // Gray border (thick line) - solid
+                const borderLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                borderLine.setAttribute('x1', offsetX1);
+                borderLine.setAttribute('y1', offsetY1);
+                borderLine.setAttribute('x2', offsetX2);
+                borderLine.setAttribute('y2', offsetY2);
+                borderLine.setAttribute('stroke', 'gray');
+                borderLine.setAttribute('stroke-width', 6);
+                borderLine.setAttribute('stroke-linecap', 'round');
+                borderLine.setAttribute('stroke-dasharray', 'none');
+                borderLine.setAttribute('fill', 'none');
+                svg.appendChild(borderLine);
+
+                // Player color (thinner line) - solid
+                const playerColorLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                playerColorLine.setAttribute('x1', offsetX1);
+                playerColorLine.setAttribute('y1', offsetY1);
+                playerColorLine.setAttribute('x2', offsetX2);
+                playerColorLine.setAttribute('y2', offsetY2);
+                playerColorLine.setAttribute('stroke', claimedBy);
+                playerColorLine.setAttribute('stroke-width', 4);
+                playerColorLine.setAttribute('stroke-linecap', 'round');
+                playerColorLine.setAttribute('stroke-dasharray', 'none');
+                playerColorLine.setAttribute('fill', 'none');
+                playerColorLine.setAttribute('opacity', '1.0');
+                svg.appendChild(playerColorLine);
+            } else {
+                // Draw unclaimed edge in gray
+                
+                // Gray border (thick line) - dashed
+                const borderLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                borderLine.setAttribute('x1', offsetX1);
+                borderLine.setAttribute('y1', offsetY1);
+                borderLine.setAttribute('x2', offsetX2);
+                borderLine.setAttribute('y2', offsetY2);
+                borderLine.setAttribute('stroke', 'gray');
+                borderLine.setAttribute('stroke-width', 6);
+                borderLine.setAttribute('stroke-linecap', 'round');
+                borderLine.setAttribute('stroke-dasharray', '10,5');
+                borderLine.setAttribute('fill', 'none');
+                svg.appendChild(borderLine);
+
+                // Gray fill (thinner line) - dashed
+                const fillLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                fillLine.setAttribute('x1', offsetX1);
+                fillLine.setAttribute('y1', offsetY1);
+                fillLine.setAttribute('x2', offsetX2);
+                fillLine.setAttribute('y2', offsetY2);
+                fillLine.setAttribute('stroke', 'gray');
+                fillLine.setAttribute('stroke-width', 4);
+                fillLine.setAttribute('stroke-linecap', 'round');
+                fillLine.setAttribute('stroke-dasharray', '8,4');
+                fillLine.setAttribute('fill', 'none');
+                fillLine.setAttribute('opacity', '0.8');
+                svg.appendChild(fillLine);
+            }
+        }
     }
 }
 
@@ -278,12 +486,17 @@ function drawCities(svg, cities, transformX, transformY) {
     });
 }
 
-function renderGraph(data) {
+function renderGraph() {
+    if (!graphData) {
+        showStatus('baseGraphStatus', 'No base graph loaded', true);
+        return;
+    }
+
     const svg = document.getElementById('graphSvg');
     svg.innerHTML = ''; // Clear existing content
 
-    const cities = data.cities;
-    const connections = data.connections || [];
+    const cities = graphData.cities;
+    const connections = graphData.connections || [];
 
     // Calculate bounds and scaling
     const bounds = calculateGraphBounds(cities);
@@ -309,7 +522,11 @@ function renderGraph(data) {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('fileInput').addEventListener('change', function () {
-        document.getElementById('status').innerHTML = '';
+    document.getElementById('baseGraphInput').addEventListener('change', function () {
+        document.getElementById('baseGraphStatus').innerHTML = '';
+    });
+    
+    document.getElementById('boardStateInput').addEventListener('change', function () {
+        document.getElementById('boardStateStatus').innerHTML = '';
     });
 }); 
