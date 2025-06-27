@@ -12,28 +12,30 @@
     <div class="container">
         <h1>Ticket to Ride Graph Viewer</h1>
 
-        <div class="controls">
-            <h3>Load Graph Data</h3>
-            <input type="file" id="fileInput" accept=".json" />
-            <button onclick="loadFromFile()">Load from File</button>
-            <div id="status"></div>
+        <div class="top-section">
+            <div class="controls">
+                <h3>Load Graph Data</h3>
+                <input type="file" id="fileInput" accept=".json" />
+                <button onclick="loadFromFile()">Load from File</button>
+                <div id="status"></div>
+                <div id="graphStats" class="graph-stats"></div>
+            </div>
+
+            <div class="instructions">
+                <h3>Instructions</h3>
+                <ul>
+                    <li>Click "Load from File" and select your JSON file containing the graph data</li>
+                    <li>Expected format: JSON with "cities" array and "connections" array</li>
+                    <li>Each connection has city1, city2, color, cost, and id fields</li>
+                    <li>Light blue circles represent cities with names inside</li>
+                    <li>Dashed colored lines represent train routes with costs displayed in white circles</li>
+                    <li>Multiple connections between the same cities are arranged in parallel</li>
+                </ul>
+            </div>
         </div>
 
         <div id="graphContainer">
             <svg id="graphSvg"></svg>
-        </div>
-
-        <div class="info">
-            <p><strong>Instructions:</strong></p>
-            <ul>
-                <li>Click "Load from File" and select your JSON file containing the graph data</li>
-                <li>Expected format: JSON with "cities" array and "connections" array</li>
-                <li>Each connection has city1, city2, color, cost, and id fields</li>
-                <li>Light blue circles represent cities with names inside</li>
-                <li>Dashed colored lines represent train routes with costs displayed in white circles</li>
-                <li>Multiple connections between the same cities are arranged in parallel</li>
-            </ul>
-            <div id="graphStats" class="graph-stats"></div>
         </div>
     </div>
 
