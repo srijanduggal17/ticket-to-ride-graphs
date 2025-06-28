@@ -81,7 +81,7 @@
             "y": 120
         },
         {
-            "name": "Sault St. Marie",
+            "name": "Sault St Marie",
             "x": 330,
             "y": 90
         },
@@ -415,7 +415,7 @@
         },
         {
             "city1": "Montreal",
-            "city2": "Sault St. Marie",
+            "city2": "Sault St Marie",
             "color": "black",
             "cost": 5,
             "id": "80bf9e65-6143-494b-ae1b-c641668dc636"
@@ -526,7 +526,7 @@
             "id": "c207bd42-4088-43fb-ab20-c495cf711fc1"
         },
         {
-            "city1": "Sault St. Marie",
+            "city1": "Sault St Marie",
             "city2": "Winnipeg",
             "color": "gray",
             "cost": 6,
@@ -744,13 +744,13 @@
         },
         {
             "city1": "Duluth",
-            "city2": "Sault St. Marie",
+            "city2": "Sault St Marie",
             "color": "gray",
             "cost": 3,
             "id": "73b57f43-3e0e-4e7f-9937-2426ff4b1cd6"
         },
         {
-            "city1": "Sault St. Marie",
+            "city1": "Sault St Marie",
             "city2": "Toronto",
             "color": "gray",
             "cost": 2,
