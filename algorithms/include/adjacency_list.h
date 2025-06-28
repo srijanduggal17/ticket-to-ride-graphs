@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 #include <vector>
 #include <unordered_map>
@@ -14,7 +16,7 @@ using TTRAdjacencyList = std::unordered_map<City_T, std::vector<Leg_T> >;
 
 constexpr int HighestDegreeOfNode = 10;
 
-Leg_T MakeLeg(const nlohmann::json & aInputJSON) {
+inline Leg_T MakeLeg(const nlohmann::json & aInputJSON) {
 	Leg_T myLeg = {
 		.mNeighbor = cityFromString(aInputJSON["city1"].get<std::string>()),
 		.mCity1 = cityFromString(aInputJSON["city1"].get<std::string>()),
@@ -43,7 +45,7 @@ TTRAdjacencyList GenerateAdjacencyList(const nlohmann::json & aInputJSON) {
 
 	// Add cities
 	for (const auto &CityJSON : aInputJSON["cities"]) {
-		std::string cityName = replacePeriodsAndSpaces(CityJSON["name"].get<std::string>());
+		std::string cityName = replaceSpaces(CityJSON["name"].get<std::string>());
 
 		auto myCity = magic_enum::enum_cast<City_T>(cityName);
 		if (myCity.has_value()) {

@@ -62,6 +62,11 @@ struct Leg_T {
 	UUID_T mEdgeID;
 };
 
+struct Route_T {
+	City_T mCity1;
+	City_T mCity2;
+	uint8_t mPoints;
+};
 
 /**
  * @brief Replace periods and spaces with underscores in a string
@@ -69,7 +74,7 @@ struct Leg_T {
  * @param input - The input string to process
  * @return std::string - The string with periods and spaces replaced by underscores
  */
-std::string replacePeriodsAndSpaces(const std::string& input) {
+std::string replaceSpaces(const std::string& input) {
 	std::string result = input;
 	for (char& c : result) {
 		if (c == ' ') {
@@ -80,7 +85,7 @@ std::string replacePeriodsAndSpaces(const std::string& input) {
 }
 
 inline City_T cityFromString(const std::string & aName) {
-	auto city = magic_enum::enum_cast<City_T>(replacePeriodsAndSpaces(aName));
+	auto city = magic_enum::enum_cast<City_T>(replaceSpaces(aName));
 	if (not city.has_value()) {
 		throw std::runtime_error(fmt::format("Invalid city: {}", aName));
 	}
@@ -120,6 +125,18 @@ struct fmt::formatter<Leg_T> : formatter<string_view> {
 			            magic_enum::enum_name(leg.mColor),
 			            UUID::toString(leg.mEdgeID),
 			            leg.mNeighbor),
+			ctx);
+	}
+};
+
+template<>
+struct fmt::formatter<Route_T> : formatter<string_view> {
+	auto format(const Route_T& route, format_context& ctx) const {
+		return formatter<string_view>::format(
+			fmt::format("Route({} <-> {}: {} pts)",
+			            route.mCity1,
+			            route.mCity2,
+			            route.mPoints),
 			ctx);
 	}
 };
