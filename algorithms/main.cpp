@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <random>
 
 #include <fmt/core.h>
 #include <spdlog/spdlog.h>
@@ -7,6 +8,7 @@
 
 #include "adjacency_list.h"
 #include "route_list.h"
+#include "algos/bfs.h"
 
 nlohmann::json loadJSONFromFile(const std::string & aFilePath) {
 	// Load JSON file
@@ -23,6 +25,30 @@ nlohmann::json loadJSONFromFile(const std::string & aFilePath) {
 
 	return outputJSON;
 }
+
+nlohmann::json pathToList(const Path_T& aPath) {
+	nlohmann::json pathList = nlohmann::json::array();
+
+	for (const auto& leg : aPath) {
+		pathList.push_back(UUID::toString(leg.mEdgeID));
+	}
+
+	return pathList;
+}
+
+nlohmann::json createEmptyBoardState() {
+	nlohmann::json boardState;
+
+	// Initialize all color arrays as empty
+	boardState["red"] = nlohmann::json::array();
+	boardState["blue"] = nlohmann::json::array();
+	boardState["green"] = nlohmann::json::array();
+	boardState["yellow"] = nlohmann::json::array();
+	boardState["black"] = nlohmann::json::array();
+
+	return boardState;
+}
+
 
 int main(int argc, char* argv[]) {
 	// Check if file argument is provided
@@ -50,5 +76,24 @@ int main(int argc, char* argv[]) {
 	totalEdges /= 2;
 	spdlog::info("Total edges in graph: {}", totalEdges);
 
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_int_distribution<> dis(0, myRoutes.size() - 1);
+	int randomIndex = dis(gen);
+	Route_T targetRoute = myRoutes.at(randomIndex);
+
+	Path_T shortestPath = BFS(myGraph, targetRoute.mCity1, targetRoute.mCity2);
+	spdlog::info("Found shortest path from {} to {}:\n{}", targetRoute.mCity1, targetRoute.mCity2, shortestPath);
+
+	nlohmann::json outputJSON = createEmptyBoardState();
+	outputJSON["red"] = pathToList(shortestPath);
+	std::ofstream outputFile("path_output.json");
+	if (!outputFile.is_open()) {
+		spdlog::error("Failed to open output file for writing");
+		return 1;
+	}
+	outputFile << outputJSON.dump(4);
+	outputFile.close();
+	spdlog::info("Path output written to path_output.json");
 	return 0;
 }

@@ -68,6 +68,8 @@ struct Route_T {
 	uint8_t mPoints;
 };
 
+using Path_T = std::vector<Leg_T>;
+
 /**
  * @brief Replace periods and spaces with underscores in a string
  *
@@ -138,5 +140,25 @@ struct fmt::formatter<Route_T> : formatter<string_view> {
 			            route.mCity2,
 			            route.mPoints),
 			ctx);
+	}
+};
+
+template<>
+struct fmt::formatter<Path_T> : formatter<string_view> {
+	auto format(const Path_T& path, format_context& ctx) const {
+		if (path.empty()) {
+			return formatter<string_view>::format("Path(empty)", ctx);
+		}
+
+		std::string pathStr = "Path(\n";
+		for (size_t i = 0; i < path.size(); ++i) {
+			if (i > 0) {
+				pathStr += " -> ";
+			}
+			pathStr += fmt::format("\t{}-{}: {}\n", path[i].mCity1, path[i].mCity2, UUID::toString(path[i].mEdgeID));
+		}
+		pathStr += ")";
+
+		return formatter<string_view>::format(pathStr, ctx);
 	}
 };
