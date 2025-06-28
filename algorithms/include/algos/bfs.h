@@ -33,10 +33,14 @@ inline Path_T BFS(const TTRAdjacencyList& aGraphAdjList, City_T aStartCity, City
 
 	bool destReached = false;
 	int numIters = 0;
-	int MaxIters = 3600;
+	int MaxIters = 36+100*2;
 	while (numIters < MaxIters) {
 		const auto &[CurrentNode, EdgeToGetHere] = nodesToVisit.front();
 		nodesToVisit.pop();
+
+		if (visitedNodes.contains(CurrentNode)) {
+			continue;
+		}
 
 		const std::vector<Leg_T> & AdjacentNodes = aGraphAdjList.at(CurrentNode);
 		visitedNodes.emplace(CurrentNode, EdgeToGetHere);
@@ -48,6 +52,10 @@ inline Path_T BFS(const TTRAdjacencyList& aGraphAdjList, City_T aStartCity, City
 		}
 
 		for (const Leg_T& Edge : AdjacentNodes) {
+			if (Edge.mNeighbor == CurrentNode) {
+				spdlog::error("Edge neighbor is current node");
+			}
+
 			if (not visitedNodes.contains(Edge.mNeighbor)) {
 				nodesToVisit.push({Edge.mNeighbor, Edge});
 			}
@@ -60,6 +68,7 @@ inline Path_T BFS(const TTRAdjacencyList& aGraphAdjList, City_T aStartCity, City
 		City_T currentNode = aEndCity;
 
 		bool sourceReached = false;
+		int numIters = 0;
 		while (not sourceReached) {
 			Leg_T incomingEdge = visitedNodes.at(currentNode);
 			City_T prevNode = incomingEdge.mCity1 == currentNode ? incomingEdge.mCity2 : incomingEdge.mCity1;
@@ -70,11 +79,14 @@ inline Path_T BFS(const TTRAdjacencyList& aGraphAdjList, City_T aStartCity, City
 				sourceReached = true;
 			}
 			currentNode = prevNode;
+			numIters++;
 		}
 
 		if (sourceReached) {
+			spdlog::info("Backtracked path in {} iterations", numIters);
 			std::reverse(shortestPathByLegs.begin(), shortestPathByLegs.end());
-		}   else {
+		}
+		else {
 			spdlog::error("Did not reach source while backtracking");
 		}
 	} else {
