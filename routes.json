@@ -1,0 +1,152 @@
+[
+    {
+        "city1": "Portland",
+        "city2": "Phoenix",
+        "points": 11
+    },
+    {
+        "city1": "Chicago",
+        "city2": "New Orleans",
+        "points": 7
+    },
+    {
+        "city1": "Vancouver",
+        "city2": "Santa Fe",
+        "points": 13
+    },
+    {
+        "city1": "Winnipeg",
+        "city2": "Little Rock",
+        "points": 11
+    },
+    {
+        "city1": "Winnipeg",
+        "city2": "Houston",
+        "points": 12
+    },
+    {
+        "city1": "New York",
+        "city2": "Atlanta",
+        "points": 6
+    },
+    {
+        "city1": "Portland",
+        "city2": "Nashville",
+        "points": 17
+    },
+    {
+        "city1": "Vancouver",
+        "city2": "Montreal",
+        "points": 20
+    },
+    {
+        "city1": "Seattle",
+        "city2": "Los Angeles",
+        "points": 9
+    },
+    {
+        "city1": "Seattle",
+        "city2": "New York",
+        "points": 22
+    },
+    {
+        "city1": "Los Angeles",
+        "city2": "Miami",
+        "points": 20
+    },
+    {
+        "city1": "Montreal",
+        "city2": "Atlanta",
+        "points": 9
+    },
+    {
+        "city1": "Toronto",
+        "city2": "Miami",
+        "points": 10
+    },
+    {
+        "city1": "Denver",
+        "city2": "Pittsburgh",
+        "points": 11
+    },
+    {
+        "city1": "Chicago",
+        "city2": "Santa Fe",
+        "points": 9
+    },
+    {
+        "city1": "Los Angeles",
+        "city2": "Chicago",
+        "points": 16
+    },
+    {
+        "city1": "Dallas",
+        "city2": "New York",
+        "points": 11
+    },
+    {
+        "city1": "San Francisco",
+        "city2": "Atlanta",
+        "points": 17
+    },
+    {
+        "city1": "Calgary",
+        "city2": "Phoenix",
+        "points": 13
+    },
+    {
+        "city1": "Calgary",
+        "city2": "Salt Lake City",
+        "points": 7
+    },
+    {
+        "city1": "Denver",
+        "city2": "El Paso",
+        "points": 4
+    },
+    {
+        "city1": "Duluth",
+        "city2": "Houston",
+        "points": 8
+    },
+    {
+        "city1": "Duluth",
+        "city2": "El Paso",
+        "points": 10
+    },
+    {
+        "city1": "Helena",
+        "city2": "Los Angeles",
+        "points": 8
+    },
+    {
+        "city1": "Kansas City",
+        "city2": "Houston",
+        "points": 5
+    },
+    {
+        "city1": "Boston",
+        "city2": "Miami",
+        "points": 12
+    },
+    {
+        "city1": "Los Angeles",
+        "city2": "New York",
+        "points": 21
+    },
+    {
+        "city1": "Sault St Marie",
+        "city2": "Nashville",
+        "points": 8
+    },
+    {
+        "city1": "Montreal",
+        "city2": "New Orleans",
+        "points": 13
+    },
+    {
+        "city1": "Sault St Marie",
+        "city2": "Oklahoma City",
+        "points": 9
+    }
+]
