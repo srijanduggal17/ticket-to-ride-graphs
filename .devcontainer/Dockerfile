@@ -4,9 +4,12 @@ FROM mcr.microsoft.com/devcontainers/base:ubuntu-24.04
 RUN apt-get update && apt-get install -y \
     build-essential \
     cmake \
+    software-properties-common \
     git \
     nlohmann-json3-dev \
     libspdlog-dev \
+    uncrustify \
+    uuid-dev \
     pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
@@ -35,4 +38,4 @@ RUN apt-get update && apt-get install -y sudo \
 USER $USERNAME
 
 # Set working directory
-WORKDIR /workspace 
+WORKDIR /workspaces
