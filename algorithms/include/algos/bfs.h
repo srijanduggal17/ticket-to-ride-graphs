@@ -16,8 +16,6 @@
  * @return Path_T
  */
 inline Path_T BFS(const TTRAdjacencyList& aGraphAdjList, City_T aStartCity, City_T aEndCity) {
-	Path_T shortestPathByLegs;
-
 	std::unordered_map<City_T, Leg_T> visitedNodes;
 
 	std::queue<std::pair<City_T, Leg_T> > nodesToVisit;
@@ -34,6 +32,7 @@ inline Path_T BFS(const TTRAdjacencyList& aGraphAdjList, City_T aStartCity, City
 	bool destReached = false;
 	int numIters = 0;
 	int MaxIters = 36+100*2;
+	// until queue is empty too
 	while (numIters < MaxIters) {
 		const auto &[CurrentNode, EdgeToGetHere] = nodesToVisit.front();
 		nodesToVisit.pop();
@@ -63,6 +62,8 @@ inline Path_T BFS(const TTRAdjacencyList& aGraphAdjList, City_T aStartCity, City
 
 		numIters++;
 	}
+
+	Path_T shortestPathByLegs;
 
 	if (destReached) {
 		City_T currentNode = aEndCity;
@@ -95,3 +96,27 @@ inline Path_T BFS(const TTRAdjacencyList& aGraphAdjList, City_T aStartCity, City
 
 	return shortestPathByLegs;
 }
+
+/*
+        adjlist[city] = [neighbors]
+        queue<city> = {startcity}
+                visited<city>
+
+        BFS(endcity, adjlist, queue) {
+                        currentnode = queue.pop
+                        if visited.contains(currentnode):
+                                return
+
+                        neighbors = adjlist[currentnode]
+
+                        for neighbor in neighbors:
+                                if neighbor is endcity:
+                                        return
+                                if neighbor is not visited:
+                                        add neighbor to queue
+
+                        mark node as visited
+
+                        BFS(endcity, adjlist, queue)
+                }
+ */
