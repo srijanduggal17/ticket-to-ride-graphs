@@ -68,7 +68,25 @@ struct Route_T {
 	uint8_t mPoints;
 };
 
+struct CityNode {
+	City_T mCity;
+	std::string mName;
+	int mX;
+	int mY;
+};
+
+struct Edge {
+	const CityNode * mFrom;
+	const CityNode * mTo;
+	CardColor_T mColor;
+	uint8_t mCost;
+	UUID_T mEdgeID;
+};
+
+constexpr int HighestDegreeOfNode = 10;
+
 using Path_T = std::vector<Leg_T>;
+using EdgePath_T = std::vector<const Edge*>;
 
 /**
  * @brief Replace periods and spaces with underscores in a string
@@ -102,6 +120,49 @@ inline CardColor_T cardColorFromString(const std::string &aColor) {
 	return color.value();
 }
 
+inline Leg_T MakeLeg(const nlohmann::json & aInputJSON) {
+	Leg_T myLeg = {
+		.mNeighbor = cityFromString(aInputJSON["city1"].get<std::string>()),
+		.mCity1 = cityFromString(aInputJSON["city1"].get<std::string>()),
+		.mCity2 = cityFromString(aInputJSON["city2"].get<std::string>()),
+		.mCost = aInputJSON["cost"].get<uint8_t>(),
+		.mColor = cardColorFromString(aInputJSON["color"].get<std::string>()),
+		.mEdgeID = UUID::parseUUID(aInputJSON["id"].get<std::string>())
+	};
+
+	// Enforce that city1 < city2
+	if (myLeg.mCity1 > myLeg.mCity2) {
+		std::swap(myLeg.mCity1, myLeg.mCity2);
+	}
+
+	return myLeg;
+}
+
+inline CityNode MakeCityNode(const nlohmann::json &aInputJSON) {
+	spdlog::info(aInputJSON.dump());
+	std::string cityName = aInputJSON["name"].get<std::string>();
+	return {
+	        .mCity = cityFromString(cityName),
+	        .mName = aInputJSON["name"].get<std::string>(),
+	        .mX = aInputJSON["x"].get<int>(),
+	        .mY = aInputJSON["y"].get<int>()
+	};
+}
+
+inline Edge MakeEdge(const nlohmann::json &aInputJSON,
+                     const CityNode * aFrom,
+                     const CityNode * aTo) {
+	std::string colorString = aInputJSON["color"].get<std::string>();
+	std::string idString = aInputJSON["id"].get<std::string>();
+	return {
+	        .mFrom = aFrom,
+	        .mTo = aTo,
+	        .mColor = cardColorFromString(colorString),
+	        .mCost = aInputJSON["cost"].get<uint8_t>(),
+	        .mEdgeID = UUID::parseUUID(idString)
+	};
+}
+
 template<>
 struct fmt::formatter<City_T> : formatter<string_view> {
 	auto format(City_T city, format_context& ctx) const {
@@ -132,6 +193,32 @@ struct fmt::formatter<Leg_T> : formatter<string_view> {
 };
 
 template<>
+struct fmt::formatter<CityNode> : formatter<string_view> {
+	auto format(const CityNode& aCity, format_context& ctx) const {
+		return formatter<string_view>::format(
+			fmt::format("City {} at ({},{})",
+			            aCity.mName,
+			            aCity.mX,
+			            aCity.mY),
+			ctx);
+	}
+};
+
+template<>
+struct fmt::formatter<Edge> : formatter<string_view> {
+	auto format(const Edge& aEdge, format_context& ctx) const {
+		return formatter<string_view>::format(
+			fmt::format("Edge({} <-> {}, cost: {}, color: {}, id: {})",
+			            aEdge.mFrom->mName,
+			            aEdge.mTo->mName,
+			            aEdge.mCost,
+			            magic_enum::enum_name(aEdge.mColor),
+			            UUID::toString(aEdge.mEdgeID)),
+			ctx);
+	}
+};
+
+template<>
 struct fmt::formatter<Route_T> : formatter<string_view> {
 	auto format(const Route_T& route, format_context& ctx) const {
 		return formatter<string_view>::format(
@@ -156,6 +243,26 @@ struct fmt::formatter<Path_T> : formatter<string_view> {
 				pathStr += " -> ";
 			}
 			pathStr += fmt::format("\t{}-{}: {}\n", path[i].mCity1, path[i].mCity2, UUID::toString(path[i].mEdgeID));
+		}
+		pathStr += ")";
+
+		return formatter<string_view>::format(pathStr, ctx);
+	}
+};
+
+template<>
+struct fmt::formatter<EdgePath_T> : formatter<string_view> {
+	auto format(const EdgePath_T& path, format_context& ctx) const {
+		if (path.empty()) {
+			return formatter<string_view>::format("Path(empty)", ctx);
+		}
+
+		std::string pathStr = "Path(\n";
+		for (size_t i = 0; i < path.size(); ++i) {
+			if (i > 0) {
+				pathStr += " -> ";
+			}
+			pathStr += fmt::format("\t{}-{}: {}\n", path[i]->mFrom->mName, path[i]->mTo->mName, UUID::toString(path[i]->mEdgeID));
 		}
 		pathStr += ")";
 
