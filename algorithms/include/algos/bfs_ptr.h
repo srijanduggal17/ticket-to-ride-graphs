@@ -20,6 +20,7 @@ inline EdgePath_T BFS_Ptr(const TTRAdjacencyList2& aGraphAdjList, const CityNode
 
 	std::queue<std::pair<const CityNode*, const Edge*> > nodesToVisit;
 	nodesToVisit.push({aStartCity, nullptr});
+	visitedNodes.emplace(aStartCity, nullptr);
 
 	bool destReached = false;
 	int numIters = 0;
@@ -29,12 +30,7 @@ inline EdgePath_T BFS_Ptr(const TTRAdjacencyList2& aGraphAdjList, const CityNode
 		const auto &[CurrentNode, EdgeToGetHere] = nodesToVisit.front();
 		nodesToVisit.pop();
 
-		if (visitedNodes.contains(CurrentNode)) {
-			continue;
-		}
-
 		const std::vector<const Edge *> & AdjacentNodes = aGraphAdjList.at(CurrentNode);
-		visitedNodes.emplace(CurrentNode, EdgeToGetHere);
 
 		if (CurrentNode == aEndCity) {
 			destReached = true;
@@ -49,6 +45,7 @@ inline EdgePath_T BFS_Ptr(const TTRAdjacencyList2& aGraphAdjList, const CityNode
 
 			if (not visitedNodes.contains(Edge->mTo)) {
 				nodesToVisit.push({Edge->mTo, Edge});
+				visitedNodes.emplace(Edge->mTo, Edge);
 			}
 		}
 
