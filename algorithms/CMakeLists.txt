@@ -60,3 +60,17 @@ target_link_libraries(bfs_ptr
     ${UUID_LIBRARY}
 )
 target_compile_features(bfs_ptr PRIVATE cxx_std_17)
+
+# Dijkstra with pointers and adjacency list
+add_executable(dijkstra test/dijkstra.cpp)
+target_include_directories(dijkstra PRIVATE
+    include
+    extern
+    ${UUID_INCLUDE_DIR}
+)
+target_link_libraries(dijkstra 
+    nlohmann_json::nlohmann_json
+    spdlog::spdlog
+    ${UUID_LIBRARY}
+)
+target_compile_features(dijkstra PRIVATE cxx_std_17)
